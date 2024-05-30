@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tambah Menu</title>
+    <link rel="stylesheet" th:href="@{/assets/css/tambahmenu.css}">
+
+    <link rel="icon" type="image/svg+xml" th:href="@{/assets/img/favicon.svg}">
+</head>
+<body>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Tambah Menu</h1>
+    </div>
+
+    <form th:action="@{/savemenu}" th:object="${menu}" method="post" enctype="multipart/form-data">
+        <label for="namaMenu">Name</label>
+        <input type="text" id="namaMenu" th:field="*{namaMenu}" />
+
+        <label for="category">Category</label>
+        <select id="category" th:field="*{category}">
+            <option value="coffee">Coffee</option>
+            <option value="food">Food</option>
+            <option value="choco">Choco</option>
+            <option value="juice">Juice</option>
+            <option value="tea">Tea</option>
+        </select>
+
+        <label for="deskripsiMenu">Description</label>
+        <textarea id="deskripsiMenu" th:field="*{deskripsiMenu}"></textarea>
+
+        <label for="hargaMenu">Price</label>
+        <input type="number" id="hargaMenu" th:field="*{hargaMenu}" step="0.01" />
+
+        <label for="file">Image</label>
+        <input type="file" id="file" name="file" />
+
+        <label for="recommended">Recommended</label>
+        <input type="checkbox" id="recommended" th:field="*{recommended}" />
+        <br>
+        <button type="submit">Save</button>
+    </form>
+</main>
+</body>
+</html>

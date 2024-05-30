@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary meta tags -->
+    <title>Denias Cafe</title>
+    <!-- Title of the webpage -->
+    <meta name="title" content="Denias Cafe" />
+    <!-- Meta title for SEO -->
+
+    <!-- Favicon 
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">  Link to favicon -->
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to Google Fonts -->
+
+    <!-- Custom CSS link -->
+    <link rel="stylesheet" href="./assets/css/contact.css" />
+    <!-- Link to custom CSS file -->
+
+    <!-- Preload images for performance optimization -->
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg" />
+
+    <link rel="icon" type="image/svg+xml" th:href="@{/assets/img/favicon.svg}">
+  </head>
+
+  <body id="top">
+    <!-- Preloader untuk halaman web-->
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">Denias Cafe</p>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="container">
+        <address class="topbar-item">
+          <div class="icon">
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span"> Denias Cafe, Sulawesi Selatan, Indonesia </span>
+        </address>
+        <div class="separator"></div>
+        <div class="topbar-item item-2">
+          <div class="icon">
+            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">Daily : 9.00 am - 11.00 pm</span>
+        </div>
+        <a href="tel:+6281355906775" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">+62 813 5590 6775</span>
+        </a>
+        <div class="separator"></div>
+        <a href="mailto:booking@restaurant.com" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">deniascafe@gmail.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" data-header>
+      <div class="container">
+        <a href="/home" class="logo">
+          <img
+            src="./assets/img/Logo.svg"
+            width="160"
+            height="50"
+            alt="Denias Cafe - Home"
+          />
+        </a>
+        <nav class="navbar" data-navbar>
+          <button class="close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+          <a href="/home" class="logo">
+            <img
+              src="./assets/img/Logo.svg"
+              width="160"
+              height="50"
+              alt="Denias Cafe - Home"
+            />
+          </a>
+          <!--Navbar-->
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="/home" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Home</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/menu" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Menu</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/aboutus" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">About Us</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/pagereview" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Review</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-link hover-underline active">
+                <div class="separator"></div>
+                <span class="span">Contact</span>
+              </a>
+            </li>
+          </ul>
+          <!--Navbar di HP-->
+          <div class="text-center">
+            <p class="headline-1 navbar-title">Kunjungi Kami</p>
+            <address class="body-4">
+              Denias Cafe, Sulawesi Selatan, Indonesia <br />
+              Sulawesi Selatan, Indonesia
+            </address>
+            <p class="body-4 navbar-text">Daily : 9.00 am - 11.00 pm</p>
+            <a href="mailto:deniascafe@gmail.com" class="body-4 sidebar-link"
+              >deniascafe@gmail.com</a
+            >
+            <div class="separator"></div>
+            <p class="contact-label">Booking Request</p>
+            <a
+              href="tel:+6281355906775"
+              class="body-1 contact-number hover-underline"
+            >
+            +62 813 5590 6775
+            </a>
+          </div>
+        </nav>
+        <a href="https://wa.me/+6281355906775" class="btn btn-secondary">
+          <span class="text text-1">Pesan Meja</span>
+          <span class="text text-2" aria-hidden="true">Pesan Meja</span>
+        </a>
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
+
+    <!--CONTACT-->
+
+    <!-- ===== BOX ICONS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+<!--===== CONTACT ME =====-->
+<section class="contact section bd-container" id="contact">
+  <br /><br /><br /><br /><br />
+  <span class="section-subtitle">Contact Us</span>
+
+  <div class="contact__container bd-grid">
+    <div class="contact__content bd-grid">
+      <div class="contact__box">
+        <i class="bx bx-home contact__icon"></i>
+        <h3 class="contact__title">Location</h3>
+        <span class="section-text"
+          >Jl. Sungguminahasa - Sulawesi Selatan, Indonesia</span
+        >
+      </div>
+
+      <div class="contact__box">
+        <i class="bx bx-phone contact__icon"></i>
+        <h3 class="contact__title">Phone</h3>
+        <span class="section-text">+62-813-5590-6775</span>
+      </div>
+
+      <div class="contact__box">
+        <i class="bx bx-envelope contact__icon"></i>
+        <h3 class="contact__title">Gmail</h3>
+        <span class="section-text">deniascafe@gmail.com</span>
+      </div>
+
+      <div class="contact__box">
+        <i class="bx bx-chat contact__icon"></i>
+        <h3 class="contact__title">Chat</h3>
+        <div>
+          <a href="https://wa.me/+6281355906775" class="contact__social"
+            ><i class="bx bxl-whatsapp-square"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="row">
+        <div class="col">
+          <img src="./assets/img/Logo.svg" class="footer_logo" />
+          <p class="footer_about">
+            Selamat datang di Denias Cafe, tempat menikmati kopi, jus, tea,
+            snack dan layanan ramah dalam suasana nyaman. Nikmati minuman dan
+            makanan kami yang disiapkan dengan penuh perhatian.
+          </p>
+        </div>
+        <div class="col">
+          <h3>
+            Office
+            <div class="bottom_line"><span></span></div>
+          </h3>
+          <p>Jl. Sungguminahasa - Takalar</p>
+          <p>Tamallayang</p>
+          <p>Sulawesi Selatan, 92153, Indonesia</p>
+          <p class="footer_email">deniascafe@gmail.com</p>
+          <h4>+62 81355906775</h4>
+        </div>
+        <div class="col">
+          <h3>
+            Links
+            <div class="bottom_line"><span></span></div>
+          </h3>
+          <ul>
+            <li><a href="/home">HOME</a></li>
+            <li><a href="/menu">MENU</a></li>
+            <li><a href="/aboutus">ABOUT US</a></li>
+            <li><a href="/pagereview">REVIEW</a></li>
+            <li><a href="contact">CONTACT</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>
+            Khusus Admin
+            <div class="bottom_line"><span></span></div>
+          </h3>
+          <a href="/awallogin">Admin Login</a> <br />
+
+          <div class="social_icons">
+            <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">Denias Cafe Ⓒ 2024 - All Rights Reserved</p>
+    </footer>
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a
+      href="#top"
+      class="back-top-btn active"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- custom js link -->
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/kategori.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      document.querySelectorAll(".feedback li").forEach((entry) =>
+  entry.addEventListener("click", (e) => {
+    if (!entry.classList.contains("active")) {
+      document.querySelector(".feedback li.active").classList.remove("active");
+      entry.classList.add("active");
+    }
+    e.preventDefault();
+  })
+);
+
+    </script>
+  </body>
+</html>

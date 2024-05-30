@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dashboard - Denias Cafe Admin</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Favicons -->
+  <link th:href="@{/assets/img/favicon.png}" rel="icon" />
+  <link th:href="@{/assets/img/apple-touch-icon.png}" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+  <link th:href="@{/assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet" />
+  <link th:href="@{/assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet" />
+  <link th:href="@{/assets/vendor/quill/quill.snow.css}" rel="stylesheet" />
+  <link th:href="@{/assets/vendor/quill/quill.bubble.css}" rel="stylesheet" />
+  <link th:href="@{/assets/vendor/remixicon/remixicon.css}" rel="stylesheet" />
+  <link th:href="@{/assets/vendor/simple-datatables/style.css}" rel="stylesheet" />
+
+  <link th:href="@{/assets/css/dashboard.css}" rel="stylesheet" />
+
+<!-- TO-DO-LIST -->
+<link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css}"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" rel="stylesheet" />
+<script th:src="@{https://cdn.tailwindcss.com}"></script>
+<script th:src="@{https://code.jquery.com/jquery-3.7.1.min.js}"></script>
+<link rel="icon" type="image/svg+xml" th:href="@{/assets/img/favicon.svg}">
+</head>
+
+<body>
+
+   <!-- ======= Header ======= -->
+   <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/dashboard" class="logo d-flex align-items-center">
+        <img th:src="@{/assets/img/logodb.png}" alt="Logo" />
+        <span class="d-none d-lg-block">Denias Cafe</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    <!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+        <button type="submit" title="Search">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+    </div>
+    <!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle" href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li>
+        <!-- End Search Icon-->
+
+        <li class="nav-item dropdown"></li>
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+              <span class="d-none d-md-block dropdown-toggle ps-2" th:text="${session.loggedInAdmin.nama}">WebCrafters</span>
+          </a>
+          <!-- End Profile Iamge Icon -->
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+                <h6 th:text="${session.loggedInAdmin.nama}">WebCrafters</h6>
+            </li>
+            <li>
+                <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Profile Dropdown Items -->
+        </li>
+        <!-- End Profile Nav -->
+      </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="/menuadmin">
+          <i class="bi bi-grid"></i>
+          <span>Menu</span>
+        </a>
+      </li>
+      <!-- End Menu Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="/review">
+          <i class="bi bi-grid"></i>
+          <span>Review</span>
+        </a>
+      </li>
+      <!-- End Menu Nav -->
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/faq">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li>
+      <!-- End F.A.Q Page Nav -->
+    </ul>
+  </aside>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Frequently Asked Questions</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Frequently Asked Questions</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section faq">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card basic">
+            <div class="card-body">
+              <h5 class="card-title">Pertanyaan Basic</h5>
+
+              <div>
+                <h6>1.Bagaimana Cara Mengelola Menu?</h6>
+                <p>Klik Menu pada kiri atas , Kemudian anda akan masuk ke page pengelolaan menu lalu anda bisa memilih untuk menambah,menghapus,dan mengubah menu.
+                  Lalu jika anda ingin menambah menu anda bisa menekan tombol tambah menu pada kanan atas, jika anda ingin mengubah menu anda bisa menekan tombol "Edit".
+                  Dan terakhir jika ingin menghapus menu anda bisa menekan tombol "Delete"</p>
+              </div>
+
+              <div class="pt-2">
+                <h6>2.Bagimana Cara Melihat Review Dari Pelanggan</h6>
+                <p>Pada bagian ini anda bisa menekan bagian menu yang ada di pojok kiri atas dan kemudian ada berbagai macam plihan review dari mulai emote dan pesa dari pelanggan.</p>
+              </div>
+
+              <div class="pt-2">
+                <h6>3. Bagaimana Cara Log Out Dari Akun Anda?</h6>
+                <p>Pada bagian ini anda bisa menekan tombol yang bertuliskan akun anda yang terltak di pojok kanan atas, kemudian anda akan di tujukan untuk menu Log Out.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- F.A.Q Group 1 -->
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Review Pelanggan Dan To-Do List</h5>
+
+    <div class="faq-content">
+      <div class="faq-item">
+        <h6>Bagaimana cara menghapus Review Pelanggan?</h6>
+        <p>Anda bisa menekan tombol "Review" yang ada di kiri atas kemudian akan ada pilihan untuk anda menghapus review dari pelanggan.</p>
+      </div>
+
+      <div class="faq-item">
+        <h6>Menambah List Pekerjaan Harian?</h6>
+        <p>Anda bisa menekan tombol "Dashboard" yang ada di kiri atas pada halaman FAQ, kemudian anda akan melihat di pojok kanan bawah terdapat kolom "To-Do List" dan anda bisa menambahkan hal apa yang harus anda lakukan kemudian tekan tombol ceklis untuk memastikan itu hal yang ingin anda lakukan, setelah selesai anda bisa menekan tombol hapus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End F.A.Q Group 1 -->
+
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <!-- F.A.Q Group 2 -->
+          <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Pengelolaan Menu</h5>
+    
+                <div class="faq-content">
+                    <div class="faq-item">
+                        <h6>Bagaimana Cara Menambah Menu?</h6>
+                        <p>Pada bagian ini anda bisa menekan tombol tambah menu, lalu anda akan menemukan pilihan berupa "Name", "Category", "Description", "Price", "Image", dan "Recommended".</p>
+                        <p>"Name" untuk anda memasukan nama produk yang ingin anda tambah. "Category" anda akan diberikan pilihan apakah menu yang akan anda masukan berupa kopi, non kopi, atau snack.</p>
+                        <p>"Description" untuk menjelaskan mengenai menu yang anda masukan. "Price" anda harus mencantumkan harga dari menu yang anda masukan. "Image" masukan gambar dari menu yang anda cantumkan agar tampilan website lebih menarik. "Recommended" pada menu ini anda akan memilih apakah menu yang akan anda cantumkan itu terekomendasi untuk pengunjung, jika iya maka tercantum label Recommended.</p>
+                    </div>
+    
+                    <div class="faq-item">
+                        <h6>Bagaimana Cara Mengubah Menu?</h6>
+                        <p>Pada bagian ini anda bisa menekan tombol ubah menu, lalu anda akan menemukan pilihan berupa "Name", "Category", "Description", "Price", "Image", dan "Recommended".</p>
+                        <p>"Name" untuk anda memasukan nama produk yang ingin anda tambah. "Category" anda akan diberikan pilihan apakah menu yang akan anda masukan berupa kopi, non kopi, atau snack.</p>
+                        <p>"Description" untuk menjelaskan mengenai menu yang anda masukan. "Price" anda harus mencantumkan harga dari menu yang anda masukan. "Image" masukan gambar dari menu yang anda cantumkan agar tampilan website lebih menarik. "Recommended" pada menu ini anda akan memilih apakah menu yang akan anda cantumkan itu terekomendasi untuk pengunjung, jika iya maka tercantum label Recommended.</p>
+                    </div>
+    
+                    <div class="faq-item">
+                        <h6>Bagaimana Cara Menghapus Menu?</h6>
+                        <p>Pada bagian ini anda bisa menekan tombol hapus menu, lalu anda akan menemukan pilihan untuk menghapus menu yang ada. Pastikan untuk memilih menu yang tepat sebelum menghapusnya.</p>
+                    </div>
+                </div>
+            </div>
+
+              </div>
+
+            </div>
+          </div><!-- End F.A.Q Group 2 -->
+
+         <!-- F.A.Q Group 3 -->
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Pengelola Pemasukan Dan Pengeluaran Cafe</h5>
+
+    <div class="faq-content">
+      <div class="faq-item">
+        <h6>Bagaimana Cara Menginput Pemasukan Dan Pengeluaran?</h6>
+        <p>Pada halaman "Dashboard" terdapat tombol masukan pada text box "Masukan Pemasukan Dan pengeluaran", kemudian anda akan mendapat kolom "Pemasukan", "Pengeluaran", dan "Tanggal". Sesuai pada pilihan tersebut anda diharuskan mengisi mengenai pemasukan serta pengeluaran pada tanggal tersebut. Pemasukan serta pengeluaran yang anda masukan akan muncul pada halaman "Dashboard". Output dari data yang anda telah masukan adalah berupa grafik, persentase, serta jumlah angka.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End F.A.Q Group 3 -->
+
+
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Denias Cafe</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+
+</html>

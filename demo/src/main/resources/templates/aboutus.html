@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary meta tags -->
+    <title>Denias Cafe</title>
+    <!-- Title of the webpage -->
+    <meta name="title" content="Denias Cafe" />
+    <!-- Meta title for SEO -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/favicon.svg}" type="image/svg+xml" />
+    <!-- Link to favicon -->
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+        rel="stylesheet"
+    />
+    <!-- Link to Google Fonts -->
+
+    <!-- Custom CSS link -->
+    <link th:href="@{/assets/css/aboutus.css}" rel="stylesheet" />
+    <!-- Link to custom CSS file -->
+
+    <!-- Preload images for performance optimization -->
+    <link rel="preload" as="image" th:href="@{/assets/images/hero-slider-1.jpg}" />
+    <link rel="preload" as="image" th:href="@{/assets/images/hero-slider-2.jpg}" />
+    <link rel="preload" as="image" th:href="@{/assets/images/hero-slider-3.jpg}" />
+
+    <link rel="icon" type="image/svg+xml" th:href="@{/assets/img/favicon.svg}">
+</head>
+
+  <body id="top">
+    <!-- Preloader untuk halaman web-->
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">Denias Cafe</p>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="container">
+        <address class="topbar-item">
+          <div class="icon">
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span"> Denias Cafe, Sulawesi Selatan, Indonesia </span>
+        </address>
+        <div class="separator"></div>
+        <div class="topbar-item item-2">
+          <div class="icon">
+            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">Daily : 9.00 am - 11.00 pm</span>
+        </div>
+        <a href="https://wa.me/+6281355906775" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">+62 813 5590 6775</span>
+        </a>
+        <div class="separator"></div>
+        <a href="mailto:booking@restaurant.com" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">deniascafe@gmail.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" data-header>
+      <div class="container">
+        <a href="/home" class="logo">
+          <img
+    th:src="@{/assets/img/Logo.svg}"
+    width="160"
+    height="50"
+    alt="Denias Cafe - Home"
+/>
+
+        </a>
+        <nav class="navbar" data-navbar>
+          <button class="close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+          <a href="/home" class="logo">
+            <img
+              src="./assets/img/Logo.svg"
+              width="160"
+              height="50"
+              alt="Denias Cafe - Home"
+            />
+          </a>
+          <!--Navbar-->
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="/home" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Home</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/menu" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Menu</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-link hover-underline active">
+                <div class="separator"></div>
+                <span class="span">About Us</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/pagereview" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Review</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/contact" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Contact</span>
+              </a>
+            </li>
+          </ul>
+          <!--Navbar di HP-->
+          <div class="text-center">
+            <p class="headline-1 navbar-title">Kunjungi Kami</p>
+            <address class="body-4">
+              Denias Cafe, Sulawesi Selatan, Indonesia <br />
+              Sulawesi Selatan, Indonesia
+            </address>
+            <p class="body-4 navbar-text">Daily : 9.00 am - 11.00 pm</p>
+            <a href="mailto:deniascafe@gmail.com" class="body-4 sidebar-link"
+              >deniascafe@gmail.com</a
+            >
+            <div class="separator"></div>
+            <p class="contact-label">Booking Request</p>
+            <a
+              href="tel:+6281355906775"
+              class="body-1 contact-number hover-underline"
+            >
+            +62 813 5590 6775
+            </a>
+          </div>
+        </nav>
+        <a href="https://wa.me/+6281355906775" class="btn btn-secondary">
+          <span class="text text-1">Pesan Meja</span>
+          <span class="text text-2" aria-hidden="true">Pesan Meja</span>
+        </a>
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
+
+
+    <!--ABOUT US-->
+    <section class="section about-us-section text-center" aria-labelledby="about-label" id="about"> <br><br><br>
+      <div class="container bd-container">
+          <div class="about-us-content">
+              <div class="about__box">
+                  <p class="section-subtitle text-center" id="about-label">Cerita Kami</p>
+                  <h2 class="headline-1 section-title">Setiap Rasa Menceritakan Sebuah Kisah</h2>
+                  <p class="section-text-j">
+                      Ketika pertama kali berdiri, Denias Cafe memanfaatkan popularitas kafe yang sedang booming di berbagai kalangan. Kafe ini menawarkan menu yang beragam, termasuk minuman kekinian, makanan ringan, kopi, dan non-kopi yang cocok untuk dinikmati oleh berbagai kelompok usia. Sebagian besar pengunjung kafe, sekitar 60%, adalah anak muda yang menikmati suasana yang santai dan menyenangkan. Sementara itu, 40% pengunjung lainnya terdiri dari kalangan umum yang mungkin tertarik dengan suasana kafe yang nyaman dan menu yang menarik. Lokasi kafe sangat strategis dan mudah dijangkau karena terletak di pinggir jalan utama. Hal ini memudahkan pengunjung untuk mengunjungi kafe, baik dengan berjalan kaki, menggunakan kendaraan pribadi, maupun transportasi umum.
+                  </p>
+              </div>
+
+              <div class="vision-mission bd-grid">
+                  <div class="about__box">
+                      <h2 class="headline-1 section-title">Visi</h2>
+                      <p class="section-text-j">Menjadi destinasi utama bagi pecinta kopi dan penggemar kuliner untuk menikmati pengalaman yang memuaskan melalui kombinasi sempurna antara rasa yang luar biasa, kenyamanan, dan keramahan.</p>
+                  </div>
+                  <div class="about__box">
+                      <h2 class="headline-1 section-title">Misi</h2>
+                      <p class="section-text-j">1. Menawarkan kualitas terbaik dalam segala hal.<br>2. Mengutamakan kesehatan dan kebahagiaan pelanggan.<br>3. Menjadi tempat yang nyaman dan inspiratif.</p>
+                  </div>
+              </div>
+
+              <div class="about__box location">
+                  <h2 class="headline-1 section-title">Lokasi Kami</h2>
+                  <br>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5045464665845!2d119.44424023582125!3d-5.339666304370438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbedf1380fcdaa9%3A0x213daa14c40d817c!2sdenias%20cafe!5e0!3m2!1sid!2sid!4v1714744163043!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+          </div>
+
+          <img src="./assets/img/shape-3.png" width="197" height="194" loading="lazy" alt="" class="shape">
+      </div>
+  </section>
+    
+    
+    
+        
+
+        <!-- FOOTER -->
+        <footer>
+          <div class="row">
+              <div class="col">
+                  <img src="./assets/img/Logo.svg" class="footer_logo">
+                  <p class="footer_about">Selamat datang di Denias Cafe, tempat menikmati kopi, jus, tea, snack dan layanan ramah dalam suasana nyaman. Nikmati minuman dan makanan kami yang disiapkan dengan penuh perhatian.
+                  </p>
+              </div>
+              <div class="col">
+                  <h3>Office <div class="bottom_line"><span></span></div></h3>
+                  <p>Jl. Sungguminahasa - Takalar</p>
+                  <p>Tamallayang</p>
+                  <p>Sulawesi Selatan, 92153, Indonesia</p>
+                  <p class="footer_email">deniascafe@gmail.com</p>
+                  <h4>+62 81355906775</h4>
+              </div>
+              <div class="col">
+                  <h3>Links <div class="bottom_line"><span></span></div></h3>
+                  <ul>
+                      <li><a href="/home">HOME</a></li>
+                      <li><a href="/menu">MENU</a></li>
+                      <li><a href="/aboutus">ABOUT US</a></li>
+                      <li><a href="/pagereview">REVIEW</a></li>
+                      <li><a href="/contact">CONTACT</a></li>
+                  </ul>
+              </div>
+              <div class="col">
+                <h3>Khusus Admin <div class="bottom_line"><span></span></div></h3>
+                <a href="/awallogin">Admin Login</a> <br>
+                
+                  
+                
+                  <div class="social_icons">
+                      <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <p class="copyright">Denias Cafe Ⓒ 2024 - All Rights Reserved</p>
+        </footer> 
+
+        
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+        <!-- custom js link -->
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/kategori.js"></script>
+      </article>
+    </main>
+    <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  </body>
+</html>

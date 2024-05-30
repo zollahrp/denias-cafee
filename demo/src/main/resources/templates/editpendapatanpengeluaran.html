@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pendapatan Pengeluaran</title>
+    <link rel="stylesheet" href="path/to/bootstrap.css">
+    <link rel="icon" type="image/svg+xml" th:href="@{/assets/img/favicon.svg}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Pendapatan dan Pengeluaran</h1>
+        <form th:action="@{/pendapatanpengeluaran/update}" th:object="${pendapatanPengeluaran}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <div class="mb-3">
+                <label for="pendapatan" class="form-label">Pendapatan</label>
+                <input type="number" id="pendapatan" th:field="*{pendapatan}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="pengeluaran" class="form-label">Pengeluaran</label>
+                <input type="number" id="pengeluaran" th:field="*{pengeluaran}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="total" class="form-label">Total</label>
+                <input type="number" id="total" th:field="*{total}" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="tanggal" class="form-label">Tanggal</label>
+                <input type="datetime-local" id="tanggal" th:field="*{tanggal}" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+    <script src="path/to/bootstrap.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const tanggalInput = document.getElementById('tanggal');
+            if (!tanggalInput.value) {
+                alert('Tanggal tidak boleh kosong!');
+                event.preventDefault();
+            }
+        });
+        </script>
+        
+</body>
+</html>

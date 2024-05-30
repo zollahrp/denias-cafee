@@ -1,0 +1,126 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0E0D0B;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Mengatur tampilan section */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* styles.css */
+
+/* Mengatur tampilan card */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    text-align: left; /* Menjadikan teks dalam card rata kiri */
+}
+
+/* Mengatur tampilan form-container */
+.form-container {
+    background-color: #ffffff; /* SaddleBrown */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: left; /* Menjadikan teks dalam form-container rata kiri */
+}
+
+/* Mengatur tampilan label */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 500;
+    text-align: left; /* Menjadikan teks dalam label rata kiri */
+    font-weight: bold;
+    color: #495057;
+}
+
+
+.form-container {
+    background-color: #ffffff; /* SaddleBrown */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-container {
+    color: #ffffff; /* White text */
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #07b16a; 
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00612c; /* Sienna */
+}
+
+.error-message,
+.success-message {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.error-message {
+    color: #ff6347; /* Tomato */
+}
+
+.success-message {
+    color: #32cd32; /* LimeGreen */
+}

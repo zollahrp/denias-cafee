@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary meta tags -->
+    <title>Denias Cafe</title>
+    <!-- Title of the webpage -->
+    <meta name="title" content="Denias Cafe" />
+    <!-- Meta title for SEO -->
+
+    <!-- Favicon 
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">  Link to favicon -->
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link jquey ajax -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Custom CSS link -->
+    <link rel="stylesheet" href="./assets/css/menu.css" />
+    <!-- Link to custom CSS file -->
+
+    <!-- Preload images for performance optimization -->
+    <link rel="preload" as="image" href="./assets/img/dpn-slider-1.jpg">
+    <link rel="preload" as="image" href="./assets/img/dpn-slider-2.jpg">
+    <link rel="preload" as="image" href="./assets/img/dpn-slider-3.jpg">
+
+    <link rel="icon" type="image/svg+xml" th:href="@{/assets/img/favicon.svg}">
+  </head>
+
+  <body id="top">
+    <!-- Preloader untuk halaman web-->
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">Denias Cafe</p>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="container">
+        <address class="topbar-item">
+          <div class="icon">
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span"> Denias Cafe, Sulawesi Selatan, Indonesia </span>
+        </address>
+        <div class="separator"></div>
+        <div class="topbar-item item-2">
+          <div class="icon">
+            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">Daily : 9.00 am - 11.00 pm</span>
+        </div>
+        <a href="tel:+11234567890" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">+62 852 4244 1054</span>
+        </a>
+        <div class="separator"></div>
+        <a href="mailto:booking@restaurant.com" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">deniascafe@gmail.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" data-header>
+      <div class="container">
+        <a href="/home" class="logo">
+          <img
+            src="./assets/img/Logo.svg"
+            width="160"
+            height="50"
+            alt="Denias Cafe - Home"
+          />
+        </a>
+        <nav class="navbar" data-navbar>
+          <button class="close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+          <a href="/home" class="logo">
+            <img
+              src="./assets/img/Logo.svg"
+              width="160"
+              height="50"
+              alt="Denias Cafe - Home"
+            />
+          </a>
+          <!--Navbar-->
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="/home" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Home</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-link hover-underline active">
+                <div class="separator"></div>
+                <span class="span">Menu</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/aboutus" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">About Us</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/pagereview" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Review</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/contact" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Contact</span>
+              </a>
+            </li>
+          </ul>
+          <!--Navbar di HP-->
+          <div class="text-center">
+            <p class="headline-1 navbar-title">Kunjungi Kami</p>
+            <address class="body-4">
+              Denias Cafe, Sulawesi Selatan, Indonesia <br />
+              Sulawesi Selatan, Indonesia
+            </address>
+            <p class="body-4 navbar-text">Daily : 9.00 am - 11.00 pm</p>
+            <a href="mailto:deniascafe@gmail.com" class="body-4 sidebar-link"
+              >deniascafe@gmail.com</a
+            >
+            <div class="separator"></div>
+            <p class="contact-label">Booking Request</p>
+            <a
+              href="tel:+6281312343829"
+              class="body-1 contact-number hover-underline"
+            >
+              +62 813 1234 3829
+            </a>
+          </div>
+        </nav>
+        <a href="https://wa.me/+6285242441054" class="btn btn-secondary">
+          <span class="text text-1">Pesan Meja</span>
+          <span class="text text-2" aria-hidden="true">Pesan Meja</span>
+        </a>
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <!-- Top Menu -->
+
+        <section class="section menu" aria-label="menu-label" id="menu">
+          <div class="container">
+            <br /><br /><br />
+
+            <p class="section-subtitle text-center">
+              Top Menu
+            </p>
+            <!-- Tombol Kategori -->
+            <div class="button-container">
+              <button class="btn btn-secondary active" data-category="all">
+                <span class="text text-1">All</span>
+                <span class="text text-2" aria-hidden="true">All</span>
+              </button>
+              <button class="btn btn-secondary" data-category="coffee">
+                <span class="text text-1">Coffee</span>
+                <span class="text text-2" aria-hidden="true">Coffee</span>
+              </button>
+              <button class="btn btn-secondary" data-category="food">
+                <span class="text text-1">Makanan</span>
+                <span class="text text-2" aria-hidden="true">Makanan</span>
+              </button>
+              <button class="btn btn-secondary" data-category="choco">
+                <span class="text text-1">Choco</span>
+                <span class="text text-2" aria-hidden="true">Choco</span>
+              </button>
+              <button class="btn btn-secondary" data-category="juice">
+                <span class="text text-1">Juice</span>
+                <span class="text text-2" aria-hidden="true">Juice</span>
+              </button>
+              <button class="btn btn-secondary" data-category="tea">
+                <span class="text text-1">Tea</span>
+                <span class="text text-2" aria-hidden="true">Tea</span>
+              </button>
+            </div>
+            <br /><br />
+
+            <!--
+              MENU
+              MENU
+              MENU
+              MENU
+              MENU
+            -->
+          
+          
+
+            <!--tyhemleaf-->
+            <ul class="grid-list">
+              <li th:each="menu : ${coffees}" data-category="coffee">
+                  <div class="menu-card hover:card">
+                      <figure class="card-banner img-holder" style="--width: 100; --height: 100">
+                          <img th:src="@{${menu.gambarPath}}" width="100" height="100" loading="lazy" th:alt="${menu.namaMenu}" class="img-cover"/>
+                      </figure>
+                      <div>
+                          <div class="title-wrapper">
+                              <h3 class="title-3">
+                                  <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
+                              </h3>
+                              <!-- Add Recommended Label -->
+                              <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                              <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}">13,000</span></span>
+                              
+                          </div>
+                          <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                      </div>
+                  </div>
+              </li>
+              <li th:each="menu : ${foods}" data-category="food">
+                <div class="menu-card hover:card">
+                    <figure class="card-banner img-holder" style="--width: 100; --height: 100">
+                        <img th:src="@{${menu.gambarPath}}" width="100" height="100" loading="lazy" th:alt="${menu.namaMenu}" class="img-cover"/>
+                    </figure>
+                    <div>
+                        <div class="title-wrapper">
+                            <h3 class="title-3">
+                                <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
+                            </h3>
+                            <!-- Add Recommended Label -->
+                            <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                            <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}">13,000</span></span>
+                            
+                        </div>
+                        <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                    </div>
+                </div>
+            </li>
+              <li th:each="menu : ${chocos}" data-category="choco">
+                  <div class="menu-card hover:card">
+                      <figure class="card-banner img-holder" style="--width: 100; --height: 100">
+                          <img th:src="@{${menu.gambarPath}}" width="100" height="100" loading="lazy" th:alt="${menu.namaMenu}" class="img-cover"/>
+                      </figure>
+                      <div>
+                          <div class="title-wrapper">
+                              <h3 class="title-3">
+                                  <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
+                              </h3>
+                              <!-- Add Recommended Label -->
+                            <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                              <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}">13,000</span></span>
+                              
+                          </div>
+                          <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                      </div>
+                  </div>
+              </li>
+              <li th:each="menu : ${juices}" data-category="juice">
+                  <div class="menu-card hover:card">
+                      <figure class="card-banner img-holder" style="--width: 100; --height: 100">
+                          <img th:src="@{${menu.gambarPath}}" width="100" height="100" loading="lazy" th:alt="${menu.namaMenu}" class="img-cover"/>
+                      </figure>
+                      <div>
+                          <div class="title-wrapper">
+                              <h3 class="title-3">
+                                  <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
+                              </h3>
+                              <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                              <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}"></span></span><!-- Add Recommended Label -->
+                              
+                          </div>
+                          <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                      </div>
+                  </div>
+              </li>
+              <li th:each="menu : ${teas}" data-category="tea">
+                  <div class="menu-card hover:card">
+                      <figure class="card-banner img-holder" style="--width: 100; --height: 100">
+                          <img th:src="@{${menu.gambarPath}}" width="100" height="100" loading="lazy" th:alt="${menu.namaMenu}" class="img-cover"/>
+                      </figure>
+                      <div>
+                          <div class="title-wrapper">
+                              <h3 class="title-3">
+                                  <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
+                              </h3>
+                              <!-- Add Recommended Label -->
+                            <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                              <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}"></span></span>
+                              
+                          </div>
+                          <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+          
+
+            <img
+              src="./assets/img/shape-5.png"
+              width="921"
+              height="1036"
+              loading="lazy"
+              alt="shape"
+              class="shape shape-2 move-anim"
+            />
+            <img
+              src="./assets/img/shape-6.png"
+              width="343"
+              height="345"
+              loading="lazy"
+              alt="shape"
+              class="shape shape-3 move-anim"
+            />
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+          <div class="row">
+            <div class="col">
+              <img src="./assets/img/Logo.svg" class="footer_logo" />
+              <p class="footer_about">
+                Selamat datang di Denias Cafe, tempat menikmati kopi, jus, tea,
+                snack dan layanan ramah dalam suasana nyaman. Nikmati minuman
+                dan makanan kami yang disiapkan dengan penuh perhatian.
+              </p>
+            </div>
+            <div class="col">
+              <h3>
+                Office
+                <div class="bottom_line"><span></span></div>
+              </h3>
+              <p>Jl. Sungguminahasa - Takalar</p>
+              <p>Tamallayang</p>
+              <p>Sulawesi Selatan, 92153, Indonesia</p>
+              <p class="footer_email">deniascafe@gmail.com</p>
+              <h4>+62 85242441054</h4>
+            </div>
+            <div class="col">
+              <h3>
+                Links
+                <div class="bottom_line"><span></span></div>
+              </h3>
+              <ul>
+                <li><a href="/home">HOME</a></li>
+                <li><a href="/menu">MENU</a></li>
+                <li><a href="/aboutus">ABOUT US</a></li>
+                <li><a href="/pagereview">REVIEW</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>
+                Khusus Admin
+                <div class="bottom_line"><span></span></div>
+              </h3>
+              <a href="/awallogin">Admin Login</a> <br />
+
+              <div class="social_icons">
+                <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <p class="copyright">Denias Cafe Ⓒ 2024 - All Rights Reserved</p>
+        </footer>
+
+          <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+        <!-- custom js link -->
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/kategori.js"></script> 
+      </article>
+    </main>
+
+    <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  </body>
+</html>

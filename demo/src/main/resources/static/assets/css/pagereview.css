@@ -1,0 +1,2093 @@
+:root {
+    /*COLORS*/
+  
+    --gold-crayola: hsl(38, 48%, 56%);
+    --quick-silver: hsla(0, 0%, 65%, 1);
+    --davys-grey: hsla(30, 3%, 34%, 1);
+    --smoky-black-1: hsla(40, 12%, 5%, 1);
+    --smoky-black-2: hsla(30, 8%, 5%, 1);
+    --smoky-black-3: hsla(0, 3%, 7%, 1);
+    --eerie-black-1: hsla(210, 4%, 9%, 1);
+    --eerie-black-2: hsla(210, 4%, 11%, 1);
+    --eerie-black-3: hsla(180, 2%, 8%, 1);
+    --eerie-black-4: hsla(0, 0%, 13%, 1);
+    --white: hsla(0, 0%, 100%, 1);
+    --white-alpha-20: hsla(0, 0%, 100%, 0.2);
+    --white-alpha-10: hsla(0, 0%, 100%, 0.1);
+    --black: hsla(0, 0%, 0%, 1);
+    --black-alpha-80: hsla(0, 0%, 0%, 0.8);
+    --black-alpha-15: hsla(0, 0%, 0%, 0.15);
+  
+    /* GRADIENT COLOR */
+  
+    --loading-text-gradient: linear-gradient(
+      90deg,
+      transparent 0% 16.66%,
+      var(--smoky-black-3) 33.33% 50%,
+      transparent 66.66% 75%
+    );
+    --gradient-1: linear-gradient(
+      to top,
+      hsla(0, 0%, 0%, 0.9),
+      hsla(0, 0%, 0%, 0.7),
+      transparent
+    );
+  
+    /* TYPOGRAPHY */
+    
+  
+    /* font-family */
+    --fontFamily-forum: "Forum", cursive;
+    --fontFamily-dm_sans: "DM Sans", sans-serif;
+  
+    /* font-size */
+    --fontSize-display-1: calc(1.3rem + 6.7vw);
+    --fontSize-headline-1: calc(2rem + 2.5vw);
+    --fontSize-headline-2: calc(1.3rem + 2.4vw);
+    --fontSize-title-1: calc(1.6rem + 1.2vw);
+    --fontSize-title-2: 2.2rem;
+    --fontSize-title-3: 2.1rem;
+    --fontSize-title-4: calc(1.6rem + 1.2vw);
+    --fontSize-body-1: 2.4rem;
+    --fontSize-body-2: 1.6rem;
+    --fontSize-body-3: 1.8rem;
+    --fontSize-body-4: 1.6rem;
+    --fontSize-label-1: 1.4rem;
+    --fontSize-label-2: 1.2rem;
+  
+    /* font-weight */
+    --weight-regular: 400;
+    --weight-bold: 700;
+  
+    /* line-height */
+    --lineHeight-1: 1em;
+    --lineHeight-2: 1.2em;
+    --lineHeight-3: 1.5em;
+    --lineHeight-4: 1.6em;
+    --lineHeight-5: 1.85em;
+    --lineHeight-6: 1.4em;
+  
+    /* letter-spacing */
+    --letterSpacing-1: 0.15em;
+    --letterSpacing-2: 0.4em;
+    --letterSpacing-3: 0.2em;
+    --letterSpacing-4: 0.3em;
+    --letterSpacing-5: 3px;
+  
+    /* SPACING */
+  
+    --section-space: 70px;
+  
+    /*SHADOW */
+  
+    --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
+  
+    /* BORDER RADIUS */
+  
+    --radius-24: 24px;
+    --radius-circle: 50%;
+  
+    /* TRANSITION */
+  
+    --transition-1: 250ms ease;
+    --transition-2: 500ms ease;
+    --transition-3: 1000ms ease;
+  }
+  
+  /*-----------------------------------*\
+      #RESET
+    \*-----------------------------------*/
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a,
+  img,
+  data,
+  span,
+  input,
+  button,
+  select,
+  ion-icon,
+  textarea {
+    display: block;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img {
+    height: auto;
+  }
+  
+  input,
+  button,
+  select,
+  textarea {
+    background: none;
+    border: none;
+    font: inherit;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    outline: none;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  address {
+    font-style: normal;
+  }
+  
+  html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--eerie-black-1);
+    color: var(--white);
+    font-family: var(--fontFamily-dm_sans);
+    font-size: var(--fontSize-body-4);
+    font-weight: var(--weight-regular);
+    line-height: var(--lineHeight-5);
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body.loaded {
+    overflow: overlay;
+  }
+  
+  body.nav-active {
+    overflow: hidden;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--gold-crayola);
+  }
+  
+  /*-----------------------------------*\
+      #TYPOGRAPHY
+    \*-----------------------------------*/
+  
+  .display-1,
+  .headline-1,
+  .headline-2,
+  .title-1,
+  .title-2,
+  .title-3,
+  .title-4 {
+    color: var(--white);
+    font-family: var(--fontFamily-forum);
+    font-weight: var(--weight-regular);
+    line-height: var(--lineHeight-2);
+  }
+  
+  .display-1 {
+    font-size: var(--fontSize-display-1);
+    line-height: var(--lineHeight-1);
+  }
+  
+  .headline-1 {
+    font-size: var(--fontSize-headline-1);
+  }
+  
+  .headline-2 {
+    font-size: var(--fontSize-headline-2);
+    line-height: var(--lineHeight-6);
+  }
+  
+  .title-1 {
+    font-size: var(--fontSize-title-1);
+  }
+  
+  .title-2 {
+    font-size: var(--fontSize-title-2);
+  }
+  
+  .title-3 {
+    font-size: var(--fontSize-title-3);
+  }
+  
+  .title-4 {
+    font-size: var(--fontSize-title-4);
+  }
+  
+  .body-1 {
+    font-size: var(--fontSize-body-1);
+    line-height: var(--lineHeight-6);
+  }
+  
+  .body-2 {
+    font-size: var(--fontSize-body-2);
+    line-height: var(--lineHeight-4);
+  }
+  
+  .body-3 {
+    font-size: var(--fontSize-body-3);
+  }
+  
+  .body-4 {
+    font-size: var(--fontSize-body-4);
+  }
+  
+  .label-1 {
+    font-size: var(--fontSize-label-1);
+  }
+  
+  .label-2 {
+    font-size: var(--fontSize-label-2);
+  }
+  
+  /*-----------------------------------*\
+      #REUSED STYLE
+    \*-----------------------------------*/
+  
+  .container {
+    padding-inline: 16px;
+  }
+  
+  .separator {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--gold-crayola);
+    transform: rotate(45deg);
+  }
+  
+  .contact-label {
+    font-weight: var(--weight-bold);
+  }
+  
+  .contact-number {
+    color: var(--gold-crayola);
+    max-width: max-content;
+    margin-inline: auto;
+  }
+  
+  .hover-underline {
+    position: relative;
+    max-width: max-content;
+  }
+  
+  .hover-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    border-block: 1px solid var(--gold-crayola);
+    transform: scaleX(0.2);
+    opacity: 0;
+    transition: var(--transition-2);
+  }
+  
+  .hover-underline:is(:hover, :focus-visible)::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  
+  .contact-number::after {
+    bottom: -5px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .section-subtitle {
+    position: relative;
+    color: var(--gold-crayola);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing-2);
+    margin-block-end: 12px;
+  }
+  
+  .section-subtitle::after {
+    content: url("../img/separator.svg");
+    display: block;
+    width: 100px;
+    margin-inline: auto;
+    margin-block-start: 5px;
+  }
+  
+  /*-----------------------------------*\
+      #Hover Tombol Dan Posisi
+  \*-----------------------------------*/
+  
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Mengatur posisi tombol-tombol di tengah secara horizontal */
+    gap: 15px; /* Ubah nilai gap sesuai dengan preferensi Anda */
+  }
+  .btn {
+    position: relative;
+    color: var(--gold-crayola);
+    font-size: var(--fontSize-label-2);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing-5);
+    max-width: max-content;
+    border: 2px solid var(--gold-crayola);
+    padding: 12px 45px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 200%;
+    border-radius: var(--radius-circle);
+    background-color: var(--gold-crayola);
+    transition: var(--transition-2);
+    z-index: -1;
+  }
+  
+  .btn .text {
+    transition: var(--transition-1);
+  }
+  
+  .btn .text-2 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: max-content;
+    color: var(--smoky-black-1);
+  }
+  
+  .btn:is(:hover, :focus-visible)::before {
+    bottom: -50%;
+  }
+  
+  .btn:is(:hover, :focus-visible) .text-1 {
+    transform: translateY(-40px);
+  }
+  
+  .btn:is(:hover, :focus-visible) .text-2 {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .btn-secondary {
+    background-color: var(--gold-crayola);
+    color: var(--black);
+  }
+  
+  .btn-secondary::before {
+    background-color: var(--smoky-black-1);
+  }
+  
+  .btn-secondary .text-2 {
+    color: var(--white);
+  }
+  
+  .has-before,
+  .has-after {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .has-before::before,
+  .has-after::after {
+    content: "";
+    position: absolute;
+  }
+  
+  .section {
+    position: relative;
+    padding-block: var(--section-space);
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .bg-black-10 {
+    background-color: var(--smoky-black-2);
+  }
+  
+  .grid-list {
+    display: grid;
+    gap: 40px;
+  }
+  
+  .hover\:shine {
+    position: relative;
+  }
+  
+  .hover\:shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(to right, transparent 0%, #fff6 100%);
+    transform: skewX(-0.08turn) translateX(-180%);
+  }
+  
+  .hover\:shine:is(:hover, :focus-within)::after {
+    transform: skewX(-0.08turn) translateX(275%);
+    transition: var(--transition-3);
+  }
+  
+  .img-holder {
+    aspect-ratio: var(--width) / var(--height);
+    overflow: hidden;
+    background-color: var(--eerie-black-4);
+  }
+  
+  .btn-text {
+    color: var(--gold-crayola);
+    padding-block-end: 4px;
+    margin-inline: auto;
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing-3);
+    font-weight: var(--weight-bold);
+    transition: var(--transition-1);
+  }
+  
+  .btn-text:is(:hover, :focus-visible) {
+    color: var(--white);
+  }
+  
+  .shape {
+    display: none;
+    position: absolute;
+    max-width: max-content;
+    z-index: -1;
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .move-anim {
+    animation: move 5s linear infinite;
+  }
+  
+  @keyframes move {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(30px);
+    }
+  }
+  
+  .has-bg-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .input-field {
+    background-color: var(--eerie-black-2);
+    color: var(--white);
+    height: 56px;
+    padding: 10px 20px;
+    border: 1px solid var(--white-alpha-10);
+    margin-block-end: 20px;
+    outline: none;
+    transition: border-color var(--transition-2);
+  }
+  
+  .input-field::placeholder {
+    color: inherit;
+  }
+  
+  .input-field:focus {
+    border-color: var(--gold-crayola);
+  }
+  
+  .icon-wrapper {
+    position: relative;
+    margin-block-end: 20px;
+  }
+  
+  .icon-wrapper .input-field {
+    margin-block-end: 0;
+    padding-inline-start: 40px;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .icon-wrapper ion-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    --ionicon-stroke-width: 50px;
+    pointer-events: none;
+  }
+  
+  .icon-wrapper ion-icon:first-child {
+    left: 15px;
+  }
+  
+  .icon-wrapper ion-icon:last-child {
+    right: 10px;
+  }
+  
+  /*-----------------------------------*\
+      #PRELOAD
+    \*-----------------------------------*/
+  
+  .preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--gold-crayola);
+    z-index: 10;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    transition: var(--transition-2);
+  }
+  
+  .preload > * {
+    transition: var(--transition-1);
+  }
+  
+  .preload.loaded > * {
+    opacity: 0;
+  }
+  
+  .preload.loaded {
+    transition-delay: 250ms;
+    transform: translateY(100%);
+  }
+  
+  .circle {
+    width: 112px;
+    height: 112px;
+    border-radius: var(--radius-circle);
+    border: 3px solid var(--white);
+    border-block-start-color: var(--smoky-black-3);
+    margin-block-end: 45px;
+    animation: rotate360 1s linear infinite;
+  }
+  
+  @keyframes rotate360 {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
+  .preload .text {
+    background-image: var(--loading-text-gradient);
+    background-size: 500%;
+    font-size: calc(2rem + 3vw);
+    font-weight: var(--weight-bold);
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: 16px;
+    padding-inline-start: 16px;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.5px var(--eerie-black-3);
+    animation: loadingText linear 2s infinite;
+  }
+  
+  @keyframes loadingText {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0%;
+    }
+  }
+  
+  /*-----------------------------------*\
+                    TOPBAR
+    \*-----------------------------------*/
+  
+  .topbar {
+    display: none;
+  }
+  
+  /*-----------------------------------*\
+                    HEADER
+    \*-----------------------------------*/
+  
+  .header .btn {
+    display: none; /* Menyembunyikan tombol di dalam elemen dengan kelas "header" */
+  }
+  
+  .header {
+    position: fixed; /* Menetapkan posisi tetap (fixed) pada elemen */
+    top: 0; /* Menempatkan elemen di bagian atas halaman */
+    left: 0; /* Menempatkan elemen di sisi kiri halaman */
+    width: 100%; /* Menetapkan lebar elemen menjadi 100% */
+    background-color: transparent; /* Menetapkan latar belakang elemen menjadi transparan */
+    padding-block: 40px; /* Menambahkan padding vertikal (atas dan bawah) sebesar 40px */
+    z-index: 4; /* Menetapkan tingkat z-index untuk mengatur lapisan elemen */
+    border-block-end: 1px solid transparent; /* Menetapkan border bawah dengan warna transparan */
+    transition: var(
+      --transition-1
+    ); /* Menambahkan efek transisi dengan variabel CSS --transition-1 */
+  }
+  
+  .header.active {
+    padding-block: 20px; /* Mengurangi padding vertikal menjadi 20px */
+    background-color: var(
+      --eerie-black-4
+    ); /* Mengubah warna latar belakang elemen */
+    border-color: var(--black-alpha-15); /* Mengubah warna border */
+  }
+  
+  .header.hide {
+    transform: translateY(
+      -100%
+    ); /* Menerapkan transformasi untuk menggeser elemen ke atas (keluar dari tampilan) */
+    transition-delay: 250ms; /* Menetapkan delay transisi sebesar 250ms */
+  }
+  
+  .header .container {
+    padding-inline: 20px; /* Menambahkan padding horizontal (kiri dan kanan) sebesar 20px */
+    display: flex; /* Mengatur tampilan elemen menjadi flexbox */
+    justify-content: space-between; /* Mengatur distribusi ruang antar elemen anak agar berada di ujung yang berlawanan */
+    align-items: center; /* Menyelaraskan elemen anak secara vertikal di tengah */
+    gap: 8px; /* Menambahkan jarak antar elemen anak sebesar 8px */
+  }
+  
+  .nav-open-btn {
+    padding: 12px; /* Menetapkan padding untuk tombol navigasi */
+    padding-inline-end: 0; /* Menghilangkan padding pada sisi akhir (kanan untuk LTR, kiri untuk RTL) */
+  }
+  
+  .nav-open-btn .line {
+    width: 30px; /* Menetapkan lebar garis */
+    height: 2px; /* Menetapkan tinggi garis */
+    background-color: var(--white); /* Menetapkan warna latar belakang garis */
+    margin-block: 4px; /* Menambahkan margin vertikal (atas dan bawah) sebesar 4px */
+    transform-origin: left; /* Menetapkan titik asal transformasi pada sisi kiri */
+    animation: menuBtn 400ms ease-in-out alternate infinite; /* Menambahkan animasi dengan durasi 400ms, ease-in-out, bergantian, dan berulang tak terbatas */
+  }
+  
+  @keyframes menuBtn {
+    0% {
+      transform: scaleX(1);
+    } /* Mengatur transformasi skala X menjadi 1 pada awal animasi */
+    100% {
+      transform: scaleX(0.5);
+    } /* Mengatur transformasi skala X menjadi 0.5 pada akhir animasi */
+  }
+  
+  .nav-open-btn .line-2 {
+    animation-delay: 150ms;
+  } /* Menambahkan delay animasi sebesar 150ms untuk garis kedua */
+  
+  .nav-open-btn .line-3 {
+    animation-delay: 300ms;
+  } /* Menambahkan delay animasi sebesar 300ms untuk garis ketiga */
+  
+  .navbar {
+    position: fixed; /* Menetapkan posisi tetap (fixed) pada elemen */
+    background-color: var(
+      --smoky-black-1
+    ); /* Menetapkan warna latar belakang elemen */
+    top: 0; /* Menempatkan elemen di bagian atas halaman */
+    left: -360px; /* Menggeser elemen keluar dari layar pada sisi kiri */
+    bottom: 0; /* Menempatkan elemen di bagian bawah halaman */
+    max-width: 360px; /* Menetapkan lebar maksimum elemen */
+    width: 100%; /* Menetapkan lebar elemen menjadi 100% */
+    padding-inline: 30px; /* Menambahkan padding horizontal (kiri dan kanan) sebesar 30px */
+    padding-block-end: 50px; /* Menambahkan padding pada bagian bawah elemen sebesar 50px */
+    overflow-y: auto; /* Menambahkan scroll vertikal jika konten melebihi tinggi elemen */
+    visibility: hidden; /* Menyembunyikan elemen */
+    z-index: 2; /* Menetapkan tingkat z-index untuk mengatur lapisan elemen */
+    transition: var(
+      --transition-2
+    ); /* Menambahkan efek transisi dengan variabel CSS --transition-2 */
+  }
+  
+  .navbar.active {
+    visibility: visible; /* Menampilkan elemen */
+    transform: translateX(360px); /* Menggeser elemen kembali ke dalam layar */
+  }
+  
+  .navbar .close-btn {
+    color: var(--white); /* Menetapkan warna teks pada tombol tutup */
+    border: 1px solid currentColor; /* Menetapkan warna border sesuai dengan warna teks saat ini */
+    padding: 4px; /* Menambahkan padding sebesar 4px */
+    border-radius: var(
+      --radius-circle
+    ); /* Menetapkan radius border untuk membuat lingkaran */
+    margin-inline-start: auto; /* Menambahkan margin kiri otomatis untuk menempatkan tombol ke kanan */
+    margin-block: 30px 20px; /* Menambahkan margin vertikal atas sebesar 30px dan bawah sebesar 20px */
+  }
+  
+  .navbar .close-btn ion-icon {
+    --ionicon-stroke-width: 40px; /* Menetapkan lebar stroke untuk ikon ion */
+  }
+  
+  .navbar .close-btn:is(:hover, :focus-visible) {
+    color: var(
+      --gold-crayola
+    ); /* Mengubah warna teks saat tombol dihover atau dalam fokus */
+  }
+  
+  .navbar .logo {
+    max-width: max-content; /* Menetapkan lebar maksimum logo berdasarkan kontennya */
+    margin-inline: auto; /* Menambahkan margin otomatis di kiri dan kanan untuk memusatkan logo */
+    margin-block-end: 60px; /* Menambahkan margin bawah sebesar 60px */
+  }
+  
+  .navbar-list {
+    border-block-end: 1px solid var(--white-alpha-20); /* Menambahkan border bawah dengan warna semi-transparan */
+    margin-block-end: 100px; /* Menambahkan margin bawah sebesar 100px */
+  }
+  
+  .navbar-item {
+    border-block-start: 1px solid var(--white-alpha-20); /* Menambahkan border atas dengan warna semi-transparan */
+  }
+  
+  .navbar-link {
+    position: relative; /* Menetapkan posisi relatif untuk elemen link */
+    font-size: var(
+      --fontSize-label-2
+    ); /* Menetapkan ukuran font sesuai dengan variabel */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf besar semua */
+    padding-block: 10px; /* Menambahkan padding vertikal (atas dan bawah) sebesar 10px */
+    max-width: unset; /* Menghapus batas lebar maksimum elemen */
+  }
+  
+  .navbar-link::after {
+    display: none; /* Menyembunyikan pseudo-elemen ::after */
+  }
+  
+  .navbar-link .span {
+    transition: var(
+      --transition-1
+    ); /* Menambahkan efek transisi dengan variabel CSS --transition-1 */
+  }
+  
+  .navbar-link:is(:hover, :focus-visible, .active) .span {
+    color: var(
+      --gold-crayola
+    ); /* Mengubah warna teks menjadi warna gold crayola saat dihover, fokus, atau aktif */
+    transform: translateX(20px); /* Menggeser teks ke kanan sebesar 20px */
+  }
+  
+  .navbar-link .separator {
+    position: absolute; /* Menetapkan posisi absolut untuk elemen separator */
+    top: 50%; /* Menempatkan elemen di tengah vertikal dari elemen induknya */
+    left: 0; /* Menempatkan elemen di sisi kiri elemen induknya */
+    transform: translateY(-50%) rotate(45deg); /* Menyelaraskan elemen secara vertikal dan memutar 45 derajat */
+    opacity: 0; /* Menyembunyikan elemen dengan mengatur opacity menjadi 0 */
+    transition: var(
+      --transition-1
+    ); /* Menambahkan efek transisi dengan variabel CSS --transition-1 */
+  }
+  
+  .navbar-link:is(:hover, :focus-visible, .active) .separator {
+    opacity: 1; /* Menampilkan elemen separator saat link dihover, dalam fokus, atau aktif */
+  }
+  
+  .navbar-title {
+    margin-block-end: 15px; /* Menambahkan margin bawah sebesar 15px */
+  }
+  
+  .navbar-text {
+    margin-block: 10px; /* Menambahkan margin vertikal (atas dan bawah) sebesar 10px */
+  }
+  
+  .navbar .body-4 {
+    color: var(
+      --quick-silver
+    ); /* Menetapkan warna teks menjadi warna quick silver */
+  }
+  
+  .sidebar-link {
+    transition: var(
+      --transition-1
+    ); /* Menambahkan efek transisi dengan variabel CSS --transition-1 */
+  }
+  
+  .sidebar-link:is(:hover, :focus-visible) {
+    color: var(
+      --gold-crayola
+    ); /* Mengubah warna teks menjadi warna gold crayola saat dihover atau dalam fokus */
+  }
+  
+  .navbar .text-center .separator {
+    margin-block: 30px; /* Menambahkan margin vertikal (atas dan bawah) sebesar 30px */
+    margin-inline: auto; /* Menambahkan margin otomatis di kiri dan kanan untuk memusatkan elemen */
+  }
+  
+  .navbar .contact-label {
+    margin-block-end: 10px; /* Menambahkan margin bawah sebesar 10px */
+  }
+  
+  .navbar::-webkit-scrollbar-thumb {
+    background-color: var(
+      --white-alpha-10
+    ); /* Menetapkan warna latar belakang scrollbar menjadi warna semi-transparan */
+  }
+  
+  .overlay {
+    position: fixed; /* Menetapkan posisi tetap (fixed) pada elemen */
+    top: 0; /* Menempatkan elemen di bagian atas halaman */
+    left: 0; /* Menempatkan elemen di sisi kiri halaman */
+    bottom: 0; /* Menempatkan elemen di bagian bawah halaman */
+    right: 0; /* Menempatkan elemen di sisi kanan halaman */
+    background-color: var(
+      --black-alpha-80
+    ); /* Menetapkan warna latar belakang elemen menjadi warna hitam semi-transparan */
+    opacity: 0; /* Menyembunyikan elemen dengan mengatur opacity menjadi 0 */
+    pointer-events: none; /* Menonaktifkan interaksi pointer pada elemen */
+    transition: var(
+      --transition-2
+    ); /* Menambahkan efek transisi dengan variabel CSS --transition-2 */
+    z-index: 1; /* Menetapkan tingkat z-index untuk mengatur lapisan elemen */
+  }
+  
+  .overlay.active {
+    opacity: 1; /* Menampilkan elemen dengan mengatur opacity menjadi 1 */
+    pointer-events: all; /* Mengaktifkan interaksi pointer pada elemen */
+  }
+
+
+  .section {
+    padding: 4rem 0 2rem;
+}
+
+.section-title, .section-subtitle {
+    text-align: center;
+}
+
+
+/* ===== LAYOUT ===== */
+.bd-container {
+    max-width: 1024px;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+}
+
+.bd-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* ===== BUTTON ===== */
+.button {
+    display: inline-block;
+    background-color: #C59D59;
+    color: #C59D59;
+    padding: .75rem 1rem;
+    border-radius: .25rem;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: #C59D59;
+}
+
+/* ===== CONTACT ME ===== */
+
+
+.contact__container {
+    row-gap: 2.5rem;
+}
+
+.contact__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact__box {
+    background-color: #C59D59;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(174, 190, 205, .3);
+}
+
+.contact__icon, .contact__title {
+    color: #ffffff;
+}
+
+.contact__icon {
+    font-size: 2.5rem;
+}
+
+.contact__title {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+.contact__description {
+    font-size: 1rem;
+}
+
+.contact__social {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0 .5rem;
+}
+
+.contact__inputs {
+    display: grid;
+    gap: 2rem;
+}
+
+.contact__input, .contact__button {
+    outline: none;
+
+    font-size: 1.5rem;
+}
+
+.contact__input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #C59D59;
+    color: #ffffff;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+
+.contact__input::placeholder {
+    color: #999;
+    font-weight: 600;
+}
+
+.contact__button {
+    cursor: pointer;
+    border: none;
+    background-color: #C59D59;
+    color: #000000;
+    padding: .75rem 1rem;
+    border-radius: .25rem;
+    transition: background-color .3s;
+}
+
+.contact__button:hover {
+    background-color: #a38044;
+}
+
+
+
+
+
+
+
+  /*-----------------------------------*\
+    #FOOTER
+  \*-----------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+  }
+  
+  footer {
+    width: 100%;
+    background: url("../im") no-repeat;
+    color: #ffffff;
+    padding: 50px 0 30px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  
+  .row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+  .col {
+    flex-basis: 25%;
+    padding: 10px;
+  }
+  
+  .col:nth-child(2),
+  .col:nth-child(3) {
+    flex-basis: 15%;
+  }
+  
+  .footer_logo {
+    width: 80px;
+    position: relative;
+    top: -23px;
+    left: -20px;
+  }
+  
+  .footer_about {
+    position: relative;
+    top: -23px;
+  }
+  
+  .col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .footer_email {
+    width: fit-content;
+    border-bottom: 1px solid #ffffff;
+    margin: 20px 0;
+  }
+  
+  .col ul li {
+    list-style: none;
+    margin-bottom: 12px;
+  }
+  
+  .col ul li a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .col form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: 50px;
+  }
+  
+  .col form .icon {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .col form input {
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+  }
+  
+  .col form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .col form button .icon_right {
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  .col .social_icons .social_icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #fff;
+    background: #797574;
+    margin-right: 15px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+  }
+  
+  footer .copyright {
+    text-align: center;
+  }
+  
+  .bottom_line {
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+  }
+  
+  .bottom_line span {
+    width: 15px;
+    height: 100%;
+    background: #c59d59;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moveline 2s linear infinite;
+  }
+  
+  @keyframes moveline {
+    0% {
+      left: -20px;
+    }
+  
+    100% {
+      left: 100%;
+    }
+  }
+  
+  /*-----------------------------------*\
+                BACK TO TOP
+  \*-----------------------------------*/
+  
+  .back-top-btn {
+    position: fixed; /* Menetapkan posisi tetap untuk tombol */
+    bottom: 20px; /* Menempatkan tombol 20px dari bagian bawah layar */
+    right: 20px; /* Menempatkan tombol 20px dari sisi kanan layar */
+    background-color: var(
+      --gold-crayola
+    ); /* Mengatur warna latar belakang tombol */
+    color: var(--smoky-black-1); /* Mengatur warna teks tombol */
+    font-size: 22px; /* Menetapkan ukuran font untuk teks tombol */
+    width: 50px; /* Menetapkan lebar tombol */
+    height: 50px; /* Menetapkan tinggi tombol */
+    border-radius: var(
+      --radius-circle
+    ); /* Menetapkan radius border untuk membuat tombol bulat */
+    display: grid; /* Menampilkan konten dalam bentuk grid */
+    place-items: center; /* Menyusun item di tengah grid */
+    box-shadow: var(--shadow-1); /* Menambahkan bayangan pada tombol */
+    transition: var(--transition-1); /* Menambahkan efek transisi */
+    opacity: 0; /* Menetapkan opacity awal tombol menjadi 0 (tidak terlihat) */
+    visibility: hidden; /* Menyembunyikan tombol */
+    z-index: 4; /* Menetapkan tingkat z-index untuk memastikan tombol berada di atas elemen lain */
+  }
+  
+  .back-top-btn:is(:hover, :focus-visible) {
+    background-color: var(
+      --white
+    ); /* Mengubah warna latar belakang tombol saat dihover atau dalam fokus */
+    color: var(
+      --gold-crayola
+    ); /* Mengubah warna teks tombol saat dihover atau dalam fokus */
+  }
+  
+  .back-top-btn.active {
+    opacity: 1; /* Mengatur opacity tombol menjadi 1 (terlihat) */
+    visibility: visible; /* Menampilkan tombol */
+  }
+  
+  /*-----------------------------------*\
+      #MEDIA QUERIES
+    \*-----------------------------------*/
+  
+  /**
+     * responsive for larger than 575px screen
+     */
+  
+  @media (min-width: 575px) {
+    /**
+       * CUSTOM PROPERTY
+       */
+  
+    :root {
+      /**
+         * typography
+         */
+  
+      --fontSize-body-2: 2rem;
+    }
+  
+    /**
+       * REUSED STYLE
+       */
+  
+    :is(.service, .about) .section-text {
+      max-width: 420px;
+      margin-inline: auto;
+    }
+  
+    .contact-number {
+      --fontSize-body-1: 3rem;
+    }
+  
+    /**
+       * TOPBAR
+       */
+  
+    .topbar {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-block: 10px;
+      border-block-end: 1px solid var(--white-alpha-20);
+      z-index: 4;
+      transition: var(--transition-1);
+    }
+  
+    .topbar:has(~ .header.active) {
+      transform: translateY(-100%);
+    }
+  
+    .topbar-item:not(.link),
+    .topbar .separator {
+      display: none;
+    }
+  
+    .topbar .container,
+    .topbar-item {
+      display: flex;
+      align-items: center;
+    }
+  
+    .topbar .container {
+      justify-content: center;
+      gap: 30px;
+    }
+  
+    .topbar-item {
+      gap: 6px;
+    }
+  
+    .topbar-item ion-icon {
+      --ionicon-stroke-width: 60px;
+    }
+  
+    .topbar-item .span {
+      font-size: var(--fontSize-label-1);
+    }
+  
+    .topbar .link {
+      transition: var(--transition-1);
+    }
+  
+    .topbar .link:is(:hover, :focus-visible) {
+      color: var(--gold-crayola);
+    }
+  
+    /**
+       * HEADER
+       */
+  
+    .header {
+      top: 51px;
+    }
+  
+    .header.active {
+      top: 0;
+    }
+  
+    .header .btn {
+      display: block;
+      margin-inline-start: auto;
+    }
+  
+    
+    /**
+       * FOOTER
+       */
+  
+    .footer-brand > * {
+      max-width: 460px;
+      margin-inline: auto;
+    }
+  
+    .footer .input-wrapper {
+      position: relative;
+    }
+  
+    .footer .input-field {
+      margin-block-end: 0;
+      padding-inline-end: 205px;
+    }
+  
+    .footer-brand .btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      min-width: max-content;
+    }
+  }
+  
+  /**
+     * responsive for larger than 768px screen
+     */
+  
+  @media (min-width: 768px) {
+    /**
+       * REUSED STYLE
+       */
+  
+    .grid-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    :is(.service, .event) .container {
+      max-width: 820px;
+    }
+  
+    :is(.service, .event) .grid-list li:last-child {
+      grid-column: 1 / 3;
+      width: calc(50% - 20px);
+      margin-inline: auto;
+    }
+  
+    /**
+       * HEADER
+       */
+  
+    .navbar-list {
+      margin-inline: 30px;
+    }
+  
+    /**
+       * FOOTER
+       */
+  
+    .footer-brand {
+      grid-column: 1 / 3;
+    }
+  }
+  
+  /**
+     * responsive for larger than 992px screen
+     */
+  
+  @media (min-width: 992px) {
+    /**
+       * CUSTOM PROPERTY
+       */
+  
+    :root {
+      /**
+         * spacing
+         */
+  
+      --section-space: 100px;
+    }
+  
+    /**
+       * REUSED STYLE
+       */
+  
+    :is(.service, .event) .container {
+      max-width: unset;
+    }
+  
+    :is(.service, .event) .grid-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    :is(.service, .event) .grid-list li:last-child {
+      grid-column: auto;
+      width: 100%;
+    }
+  
+    /**
+       * TOPBAR
+       */
+  
+    .topbar-item:not(.link) {
+      display: flex;
+    }
+  
+    .topbar .item-2 {
+      margin-inline-end: auto;
+    }
+  
+    
+    /**
+       * FOOTER
+       */
+  
+    .footer .grid-list {
+      grid-template-columns: 0.45fr 1fr 0.45fr;
+      align-items: center;
+    }
+  
+    .footer-brand {
+      grid-column: auto;
+      order: 1;
+      padding-block: 100px;
+    }
+  
+    .footer-list:last-child {
+      order: 2;
+    }
+  }
+  
+  /**
+     * responsive for larger than 1200px screen
+     */
+  
+  @media (min-width: 1200px) {
+    /**
+       * CUSTOM PROPERTY
+       */
+  
+    :root {
+      /**
+         * typography
+         */
+  
+      --fontSize-title-2: 2.5rem;
+    }
+  
+    /**
+       * REUSED STYLE
+       */
+  
+    .container,
+    :is(.service, .event) .container {
+      max-width: 1200px;
+      width: 100%;
+      margin-inline: auto;
+    }
+  
+    /**
+       * TOPBAR
+       */
+  
+    .topbar .container {
+      max-width: unset;
+    }
+  
+    .topbar .separator {
+      display: block;
+    }
+  
+    /**
+       * HEADER
+       */
+  
+    .nav-open-btn,
+    .navbar > *:not(.navbar-list),
+    .header .overlay {
+      display: none;
+    }
+  
+    .header .container {
+      max-width: unset;
+    }
+  
+    .navbar,
+    .navbar.active,
+    .navbar-list {
+      all: unset;
+    }
+  
+    .navbar,
+    .navbar.active {
+      margin-inline: auto 20px;
+    }
+  
+    .navbar-list {
+      display: flex;
+      gap: 30px;
+    }
+  
+    .navbar-item {
+      border-block-start: none;
+    }
+  
+    .navbar .separator {
+      display: none;
+    }
+  
+    .navbar-link:is(:hover, :focus-visible, .active) .span {
+      transform: unset;
+    }
+  
+    .navbar-link {
+      font-weight: var(--weight-bold);
+      letter-spacing: var(--letterSpacing-1);
+    }
+  
+    .navbar-link::after {
+      display: block;
+    }
+  
+    .navbar-link.active::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  
+    .header .btn {
+      margin-inline-start: 0;
+    }
+  
+    
+  
+    /**
+     * responsive for larger than 1400px screen
+     */
+  
+    @media (min-width: 1400px) {
+      /**
+       * HEADER
+       */
+  
+      .navbar {
+        margin-inline: auto;
+      }
+    }
+  }
+  
+
+
+
+/*REVIEW*/
+.feedback {
+  --normal: #eceaf3;
+  --normal-shadow: #d9d8e3;
+  --normal-mouth: #9795a4;
+  --normal-eye: #595861;
+  --active: #f8da69;
+  --active-shadow: #f4b555;
+  --active-mouth: #f05136;
+  --active-eye: #313036;
+  --active-tear: #76b5e7;
+  --active-shadow-angry: #e94f1d;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.feedback li {
+  position: relative;
+  border-radius: 50%;
+  background: var(--sb, var(--normal));
+  box-shadow: inset 3px -3px 4px var(--sh, var(--normal-shadow));
+  transition: background 0.4s, box-shadow 0.4s, transform 0.3s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.feedback li::after {
+  content: attr(data-text);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.feedback li:hover::after {
+  opacity: 1;
+}
+
+.feedback li:not(:last-child) {
+  margin-right: 20px;
+}
+.feedback li div {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transform: perspective(240px) translateZ(4px);
+}
+.feedback li div svg,
+.feedback li div:before,
+.feedback li div:after {
+  display: block;
+  position: absolute;
+  left: var(--l, 9px);
+  top: var(--t, 13px);
+  width: var(--w, 8px);
+  height: var(--h, 2px);
+  transform: rotate(var(--r, 0deg)) scale(var(--sc, 1)) translateZ(0);
+}
+.feedback li div svg {
+  fill: none;
+  stroke: var(--s);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.4s;
+}
+.feedback li div svg.eye {
+  --s: var(--e, var(--normal-eye));
+  --t: 17px;
+  --w: 7px;
+  --h: 4px;
+}
+.feedback li div svg.eye.right {
+  --l: 23px;
+}
+.feedback li div svg.mouth {
+  --s: var(--m, var(--normal-mouth));
+  --l: 11px;
+  --t: 23px;
+  --w: 18px;
+  --h: 7px;
+}
+.feedback li div:before,
+.feedback li div:after {
+  content: "";
+  z-index: var(--zi, 1);
+  border-radius: var(--br, 1px);
+  background: var(--b, var(--e, var(--normal-eye)));
+  transition: background 0.4s;
+}
+.feedback li.angry {
+  --step-1-rx: -24deg;
+  --step-1-ry: 20deg;
+  --step-2-rx: -24deg;
+  --step-2-ry: -20deg;
+}
+.feedback li.angry div:before {
+  --r: 20deg;
+}
+.feedback li.angry div:after {
+  --l: 23px;
+  --r: -20deg;
+}
+.feedback li.angry div svg.eye {
+  stroke-dasharray: 4.55;
+  stroke-dashoffset: 8.15;
+}
+.feedback li.angry.active {
+  -webkit-animation: angry 1s linear;
+  animation: angry 1s linear;
+}
+.feedback li.angry.active div:before {
+  --middle-y: -2px;
+  --middle-r: 22deg;
+  -webkit-animation: toggle 0.8s linear forwards;
+  animation: toggle 0.8s linear forwards;
+}
+.feedback li.angry.active div:after {
+  --middle-y: 1px;
+  --middle-r: -18deg;
+  -webkit-animation: toggle 0.8s linear forwards;
+  animation: toggle 0.8s linear forwards;
+}
+.feedback li.sad {
+  --step-1-rx: 20deg;
+  --step-1-ry: -12deg;
+  --step-2-rx: -18deg;
+  --step-2-ry: 14deg;
+}
+.feedback li.sad div:before,
+.feedback li.sad div:after {
+  --b: var(--active-tear);
+  --sc: 0;
+  --w: 5px;
+  --h: 5px;
+  --t: 15px;
+  --br: 50%;
+}
+.feedback li.sad div:after {
+  --l: 25px;
+}
+.feedback li.sad div svg.eye {
+  --t: 16px;
+}
+.feedback li.sad div svg.mouth {
+  --t: 24px;
+  stroke-dasharray: 9.5;
+  stroke-dashoffset: 33.25;
+}
+.feedback li.sad.active div:before,
+.feedback li.sad.active div:after {
+  -webkit-animation: tear 0.6s linear forwards;
+  animation: tear 0.6s linear forwards;
+}
+.feedback li.ok {
+  --step-1-rx: 4deg;
+  --step-1-ry: -22deg;
+  --step-1-rz: 6deg;
+  --step-2-rx: 4deg;
+  --step-2-ry: 22deg;
+  --step-2-rz: -6deg;
+}
+.feedback li.ok div:before {
+  --l: 12px;
+  --t: 17px;
+  --h: 4px;
+  --w: 4px;
+  --br: 50%;
+  box-shadow: 12px 0 0 var(--e, var(--normal-eye));
+}
+.feedback li.ok div:after {
+  --l: 13px;
+  --t: 26px;
+  --w: 14px;
+  --h: 2px;
+  --br: 1px;
+  --b: var(--m, var(--normal-mouth));
+}
+.feedback li.ok.active div:before {
+  --middle-s-y: 0.35;
+  -webkit-animation: toggle 0.2s linear forwards;
+  animation: toggle 0.2s linear forwards;
+}
+.feedback li.ok.active div:after {
+  --middle-s-x: 0.5;
+  -webkit-animation: toggle 0.7s linear forwards;
+  animation: toggle 0.7s linear forwards;
+}
+.feedback li.good {
+  --step-1-rx: -14deg;
+  --step-1-rz: 10deg;
+  --step-2-rx: 10deg;
+  --step-2-rz: -8deg;
+}
+.feedback li.good div:before {
+  --b: var(--m, var(--normal-mouth));
+  --w: 5px;
+  --h: 5px;
+  --br: 50%;
+  --t: 22px;
+  --zi: 0;
+  opacity: 0.5;
+  box-shadow: 16px 0 0 var(--b);
+  filter: blur(2px);
+}
+.feedback li.good div:after {
+  --sc: 0;
+}
+.feedback li.good div svg.eye {
+  --t: 15px;
+  --sc: -1;
+  stroke-dasharray: 4.55;
+  stroke-dashoffset: 8.15;
+}
+.feedback li.good div svg.mouth {
+  --t: 22px;
+  --sc: -1;
+  stroke-dasharray: 13.3;
+  stroke-dashoffset: 23.75;
+}
+.feedback li.good.active div svg.mouth {
+  --middle-y: 1px;
+  --middle-s: -1;
+  -webkit-animation: toggle 0.8s linear forwards;
+  animation: toggle 0.8s linear forwards;
+}
+.feedback li.happy div {
+  --step-1-rx: 18deg;
+  --step-1-ry: 24deg;
+  --step-2-rx: 18deg;
+  --step-2-ry: -24deg;
+}
+.feedback li.happy div:before {
+  --sc: 0;
+}
+.feedback li.happy div:after {
+  --b: var(--m, var(--normal-mouth));
+  --l: 11px;
+  --t: 23px;
+  --w: 18px;
+  --h: 8px;
+  --br: 0 0 8px 8px;
+}
+.feedback li.happy div svg.eye {
+  --t: 14px;
+  --sc: -1;
+}
+.feedback li.happy.active div:after {
+  --middle-s-x: 0.95;
+  --middle-s-y: 0.75;
+  -webkit-animation: toggle 0.8s linear forwards;
+  animation: toggle 0.8s linear forwards;
+}
+.feedback li:not(.active) {
+  cursor: pointer;
+}
+.feedback li:not(.active):active {
+  transform: scale(0.925);
+}
+.feedback li.active {
+  --sb: var(--active);
+  --sh: var(--active-shadow);
+  --m: var(--active-mouth);
+  --e: var(--active-eye);
+}
+.feedback li.active div {
+  -webkit-animation: shake 0.8s linear forwards;
+  animation: shake 0.8s linear forwards;
+}
+
+@-webkit-keyframes shake {
+  30% {
+    transform: perspective(240px) rotateX(var(--step-1-rx, 0deg))
+      rotateY(var(--step-1-ry, 0deg)) rotateZ(var(--step-1-rz, 0deg))
+      translateZ(10px);
+  }
+  60% {
+    transform: perspective(240px) rotateX(var(--step-2-rx, 0deg))
+      rotateY(var(--step-2-ry, 0deg)) rotateZ(var(--step-2-rz, 0deg))
+      translateZ(10px);
+  }
+  100% {
+    transform: perspective(240px) translateZ(4px);
+  }
+}
+
+@keyframes shake {
+  30% {
+    transform: perspective(240px) rotateX(var(--step-1-rx, 0deg))
+      rotateY(var(--step-1-ry, 0deg)) rotateZ(var(--step-1-rz, 0deg))
+      translateZ(10px);
+  }
+  60% {
+    transform: perspective(240px) rotateX(var(--step-2-rx, 0deg))
+      rotateY(var(--step-2-ry, 0deg)) rotateZ(var(--step-2-rz, 0deg))
+      translateZ(10px);
+  }
+  100% {
+    transform: perspective(240px) translateZ(4px);
+  }
+}
+@-webkit-keyframes tear {
+  0% {
+    opacity: 0;
+    transform: translateY(-2px) scale(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(12px) scale(0.6, 1.2) translateZ(0);
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(24px) translateX(4px) rotateZ(-30deg) scale(0.7, 1.1)
+      translateZ(0);
+  }
+}
+@keyframes tear {
+  0% {
+    opacity: 0;
+    transform: translateY(-2px) scale(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(12px) scale(0.6, 1.2) translateZ(0);
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(24px) translateX(4px) rotateZ(-30deg) scale(0.7, 1.1)
+      translateZ(0);
+  }
+}
+@-webkit-keyframes toggle {
+  50% {
+    transform: translateY(var(--middle-y, 0))
+      scale(
+        var(--middle-s-x, var(--middle-s, 1)),
+        var(--middle-s-y, var(--middle-s, 1))
+      )
+      rotate(var(--middle-r, 0deg));
+  }
+}
+@keyframes toggle {
+  50% {
+    transform: translateY(var(--middle-y, 0))
+      scale(
+        var(--middle-s-x, var(--middle-s, 1)),
+        var(--middle-s-y, var(--middle-s, 1))
+      )
+      rotate(var(--middle-r, 0deg));
+  }
+}
+@-webkit-keyframes angry {
+  40% {
+    background: var(--active);
+  }
+  45% {
+    box-shadow: inset 3px -3px 4px var(--active-shadow),
+      inset 0 8px 10px var(--active-shadow-angry);
+  }
+}
+@keyframes angry {
+  40% {
+    background: var(--active);
+  }
+  45% {
+    box-shadow: inset 3px -3px 4px var(--active-shadow),
+      inset 0 8px 10px var(--active-shadow-angry);
+  }
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.feedback.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.feedback.centered li {
+  margin: 0 10px;
+}
+
+/*KOMEN*/
+/* Mengatur gaya untuk elemen utama */
+.main {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Mengatur gaya untuk bagian review */
+  .review-section {
+    background-color: var(--eerie-black-1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Mengatur gaya untuk kontainer */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Mengatur gaya untuk judul review */
+  .R-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Mengatur gaya untuk setiap elemen review */
+  .media-review {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  
+ /* Mengatur gaya untuk kontainer */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Mengatur gaya untuk judul review */
+  .R-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Mengatur gaya untuk setiap elemen review */
+  .media-review {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  
+  /* Mengatur gaya untuk kontainer media */
+  .media-body {
+    margin-left: 10px;
+  }
+  
+  /* Mengatur gaya untuk kontainer fleksibel */
+  .M-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Mengatur gaya untuk judul review */
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Mengatur gaya untuk nama pengguna */
+  .title span:not(.tglreview) {
+    display: block;
+    font-size: 20px;
+  }
+  
+  /* Mengatur gaya untuk tanggal review */
+  .tglreview {
+    display: block;
+    font-size: 15px;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  /* Mengatur gaya untuk deskripsi review */
+  .description {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+/* Tambahkan ini di dalam file CSS Anda */
+.swal2-title {
+  font-size: 2em; /* Ubah ukuran sesuai keinginan Anda */
+}
+
+.swal2-content {
+  font-size: 1.5em; /* Ubah ukuran sesuai keinginan Anda */
+}

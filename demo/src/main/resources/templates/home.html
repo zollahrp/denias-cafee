@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary meta tags -->
+    <title>Denias Cafe</title> <!-- Title of the webpage -->
+    <meta name="title" content="Denias Cafe"> <!-- Meta title for SEO -->
+
+    <!-- Favicon 
+    <link rel="shortcut ico n" href="./favicon.svg" type="image/svg+xml">  Link to favicon -->
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet"> <!-- Link to Google Fonts -->
+
+    <!-- Custom CSS link -->
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link to custom CSS file -->
+
+    <!-- Preload images for performance optimization -->
+    <link rel="preload" as="image" href="./assets/img/dpn-slider-1.jpg">
+    <link rel="preload" as="image" href="./assets/img/dpn-slider-2.jpg">
+    <link rel="preload" as="image" href="./assets/img/dpn-slider-3.jpg">
+
+    <link rel="icon" type="image/svg+xml" th:href="@{/assets/img/favicon.svg}">
+
+</head>
+
+<body id="top">
+
+  <!-- Preloader untuk halaman web-->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">Denias Cafe</p>
+  </div>
+
+
+
+
+
+  <!-- TOP BAR -->
+
+  <div class="topbar">
+    <div class="container">
+
+      <address class="topbar-item">
+        <div class="icon">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">
+          Denias Cafe, Sulawesi Selatan, Indonesia
+        </span>
+      </address>
+
+      <div class="separator"></div>
+
+      <div class="topbar-item item-2">
+        <div class="icon">
+          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">Daily : 9.00 am - 11.00 pm</span>
+      </div>
+
+      <a href="tel:+6281355906775" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">+62 813 5590 6775</span>
+      </a>
+
+      <div class="separator"></div>
+
+      <a href="mailto:booking@restaurant.com" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">deniascafe@gmail.com</span>
+      </a>
+
+    </div>
+  </div>
+
+
+
+
+
+  <!-- HEADER -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/img/Logo.svg" width="160" height="50" alt="Denias Cafe - Home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">
+          <img src="./assets/img/Logo.svg" width="160" height="50" alt="Denias Cafe - Home">
+        </a>
+      
+
+      <!--Navbar-->
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link hover-underline active">
+              <div class="separator"></div>
+
+              <span class="span">Home</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/menu" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Menu</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/aboutus" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">About Us</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/pagereview" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Review</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/contact" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Contact</span>
+            </a>
+          </li>
+
+        </ul>
+
+      <!--Navbar di HP-->
+        <div class="text-center">
+          <p class="headline-1 navbar-title">Kunjungi Kami</p>
+
+          <address class="body-4">
+            Denias Cafe, Sulawesi Selatan, Indonesia <br>
+         
+            Sulawesi Selatan, Indonesia
+          </address>
+
+          <p class="body-4 navbar-text">Daily : 9.00 am - 11.00 pm</p>
+
+          <a href="mailto:deniascafe@gmail.com" class="body-4 sidebar-link">deniascafe@gmail.com</a>
+
+          <div class="separator"></div>
+
+          <p class="contact-label">Booking Request</p>
+
+          <a href="tel:+6281355906775" class="body-1 contact-number hover-underline">
+            +62 813 5590 6775
+          </a>
+        </div>
+
+      </nav>
+
+      <a href="https://wa.me/+6281355906775" class="btn btn-secondary">
+        <span class="text text-1">Pesan Meja</span>
+
+        <span class="text text-2" aria-hidden="true">Pesan Meja</span>
+      </a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!--img slider depan -->
+
+      <section class="hero text-center" aria-label="home" id="home">
+
+        <ul class="hero-slider" data-hero-slider>
+
+          <li class="slider-item active" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/img/dpn-slider-1.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">Coffee</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Dari Biji Terbaik untuk<br>
+              Pecinta Kopi
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Rasakan Keajaiban di Setiap Seduhan, Gigitan, dan Sruputan!
+            </p>
+
+            <a href="/menu" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Lihat Menu Kami</span>
+
+              <span class="text text-2" aria-hidden="true">Lihat Menu Kami</span>
+            </a>
+
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/img/dpn-slider-2.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">Snack</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Menyajikan Kelezatan <br>
+              di setiap cemilan
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Rasakan Keajaiban di Setiap Seduhan, Gigitan, dan Sruputan!
+            </p>
+
+            <a href="/menu" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Lihat Menu Kami</span>
+
+              <span class="text text-2" aria-hidden="true">Lihat Menu Kami</span>
+            </a>
+
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/img/dpn-slider-3.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">Non-Coffee</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Kehangatan Rasa <br>
+              Ketenangan Hati
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Rasakan Keajaiban di Setiap Seduhan, Gigitan, dan Sruputan!
+            </p>
+
+            <a href="/menu" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Lihat Menu Kami</span>
+
+              <span class="text text-2" aria-hidden="true">Lihat Menu Kami</span>
+            </a>
+
+          </li>
+
+        </ul>
+
+        <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+          <ion-icon name="chevron-back"></ion-icon>
+        </button>
+
+        <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </button>
+      </section>
+
+
+      <!-- ABOUT -->
+    
+      <section class="section about text-center" aria-labelledby="about-label" id="about">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="section-subtitle text-center" id="about-label">Cerita Kami</p>
+
+            <h2 class="headline-1 section-title">Setiap Rasa Menceritakan Sebuah Kisah</h2>
+
+            <p class="section-text">
+              Ketika pertama kali berdiri, Denias Cafe memanfaatkan popularitas kafe yang sedang booming di berbagai kalangan. Kafe ini menawarkan menu yang beragam, termasuk minuman kekinian, makanan ringan, kopi, dan non-kopi yang cocok untuk dinikmati oleh berbagai kelompok usia. 
+              Sebagian besar pengunjung kafe, sekitar 60%, adalah anak muda yang menikmati suasana yang santai dan menyenangkan. Sementara itu, 40% pengunjung lainnya terdiri dari kalangan umum yang mungkin tertarik dengan suasana kafe yang nyaman dan menu yang menarik. 
+              Lokasi kafe sangat strategis dan mudah dijangkau karena terletak di pinggir jalan utama. Hal ini memudahkan pengunjung untuk mengunjungi kafe, baik dengan berjalan kaki, menggunakan kendaraan pribadi, maupun transportasi umum.
+            </p>
+
+            <!--<div class="contact-label">Book Through Call</div>
+
+            <a href="tel:+2544001234567" class="body-1 contact-number hover-underline">+254 (400) 123 4567</a> -->
+
+            <a href="/aboutus" class="btn btn-primary">
+              <span class="text text-1">Read More</span>
+
+              <span class="text text-2" aria-hidden="true">Read More</span>
+            </a>
+
+          </div>
+
+          <figure class="about-banner">
+
+            <img src="./assets/img/about-cafe.jpg" width="570" height="570" loading="lazy" alt="about banner"
+              class="w-100" data-parallax-item data-parallax-speed="1">
+
+            <div class="abs-img abs-img-2 has-before">
+              <img src="./assets/img/badge.png" width="133" height="134" loading="lazy" alt="">
+            </div>
+
+          </figure>
+
+          <img src="./assets/img/shape-8.png" width="197" height="194" loading="lazy" alt="" class="shape">
+
+        </div>
+      </section>
+
+
+
+      <!-- Top Menu -->
+
+      <section class="section menu" aria-label="menu-label" id="menu">
+        <div class="container">
+    
+          <p class="section-subtitle text-center">Special Selection</p>
+    
+          <h2 class="headline-1 section-title text-center">Top Menu</h2>
+    
+          <section id="recommended">
+            <ul class="grid-list">
+                <li th:each="menu : ${recommendedMenus}">
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img th:src="@{${menu.gambarPath}}" width="100" height="100" loading="lazy" th:alt="${menu.namaMenu}" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title" th:text="${menu.namaMenu}">Espreso Hot</a>
+                                </h3>
+                                <!-- Add Recommended Label -->
+                            <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                                <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}">13,000</span></span>
+                            </div>
+                            <p class="card-text label-1" th:text="${menu.deskripsiMenu}">
+                                Espresso hot is a strong, concentrated coffee shot brewed using high pressure to extract intense flavors and rich aroma from finely ground coffee beans.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    
+    
+          <a href="/menu" class="btn btn-primary">
+            <span class="text text-1">Lihat Semua Menu</span>
+    
+            <span class="text text-2" aria-hidden="true">Lihat Semua Menu</span>
+          </a>
+    
+          <img src="./assets/img/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
+            class="shape shape-2 move-anim">
+          <img src="./assets/img/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
+            class="shape shape-3 move-anim">
+    
+        </div>
+      </section>
+</div>
+
+
+      <!-- Keunggulan Kafe Kita -->
+
+      <section class="section features text-center" aria-label="features">
+        <div class="container">
+
+          <p class="section-subtitle text-center">Mengapa Memilih Kami</p>
+
+          <h2 class="headline-1 section-title">Keunggulan Kami</h2>
+
+          <ul class="grid-list">
+
+            <li class="feature-item">
+              <div class="feature-card">
+
+                <div class="card-icon">
+                  <img src="./assets/img/keunggulan-icon-1.png" width="100" height="80" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="title-2 card-title">Kopi Premium</h3>
+
+                <p class="label-1 card-text">Kami menggunakan biji kopi berkualitas tinggi yang dipilih dengan cermat untuk memberikan cita rasa terbaik di setiap cangkir.</p>
+
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-card">
+
+                <div class="card-icon">
+                  <img src="./assets/img/keunggulan-icon-2.png" width="100" height="80" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="title-2 card-title">Suasana Nyaman</h3>
+
+                <p class="label-1 card-text">Kafe kami menawarkan lingkungan yang hangat dan nyaman, ideal untuk bekerja, bersantai, atau berkumpul bersama teman.</p>
+
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-card">
+
+                <div class="card-icon">
+                  <img src="./assets/img/keunggulan-icon-3.png" width="100" height="80" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="title-2 card-title">Pelayanan Ramah</h3>
+
+                <p class="label-1 card-text">Kami menawarkan layanan yang profesional dan ramah, dengan senyuman.</p>
+
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-card">
+
+                <div class="card-icon">
+                  <img src="./assets/img/keunggulan-icon-4.png" width="100" height="80" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="title-2 card-title">Wi-Fi Cepat</h3>
+
+                <p class="label-1 card-text">Tetap terhubung dengan Wi-Fi cepat dan gratis, sempurna untuk bekerja atau menjelajahi internet saat menikmati menu Anda.</p>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <img src="./assets/img/shape-7.png" width="208" height="178" loading="lazy" alt="shape"
+            class="shape shape-1">
+
+          <img src="./assets/img/shape-8.png" width="120" height="115" loading="lazy" alt="shape"
+            class="shape shape-2">
+
+        </div>
+      </section>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="row">
+      <div class="col">
+          <img src="./assets/img/Logo.svg" class="footer_logo">
+          <p class="footer_about">Selamat datang di Denias Cafe, tempat menikmati kopi, jus, tea, snack dan layanan ramah dalam suasana nyaman. Nikmati minuman dan makanan kami yang disiapkan dengan penuh perhatian.
+          </p>
+      </div>
+      <div class="col">
+          <h3>Office <div class="bottom_line"><span></span></div></h3>
+          <p>Jl. Sungguminahasa - Takalar</p>
+          <p>Tamallayang</p>
+          <p>Sulawesi Selatan, 92153, Indonesia</p>
+          <p class="footer_email">deniascafe@gmail.com</p>
+          <h4>+62 81355906775</h4>
+      </div>
+      <div class="col">
+          <h3>Links <div class="bottom_line"><span></span></div></h3>
+          <ul>
+              <li><a href="/home">HOME</a></li>
+              <li><a href="/menu">MENU</a></li>
+              <li><a href="/aboutus">ABOUT US</a></li>
+              <li><a href="/pagereview">REVIEW</a></li>
+              <li><a href="/contact">CONTACT</a></li>
+          </ul>
+      </div>
+      <div class="col">
+        <h3>Khusus Admin <div class="bottom_line"><span></span></div></h3>
+        <a href="/awallogin">Admin Login</a> <br>
+        
+          
+        
+          <div class="social_icons">
+              <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+          </div>
+      </div>
+  </div>
+  <hr>
+  <p class="copyright">Denias Cafe Ⓒ 2024 - All Rights Reserved</p>
+</footer> 
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+
+  <script>
+    'use strict';
+
+
+
+/**
+ * PRELOAD
+ * 
+ * loading will be end after document is loaded
+ */
+
+const preloader = document.querySelector("[data-preaload]");
+
+window.addEventListener("load", function () {
+  preloader.classList.add("loaded");
+  document.body.classList.add("loaded");
+});
+
+
+
+/**
+ * add event listener on multiple elements
+ */
+
+const addEventOnElements = function (elements, eventType, callback) {
+  for (let i = 0, len = elements.length; i < len; i++) {
+    elements[i].addEventListener(eventType, callback);
+  }
+}
+
+
+
+/**
+ * NAVBAR
+ */
+
+const navbar = document.querySelector("[data-navbar]");
+const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+const overlay = document.querySelector("[data-overlay]");
+
+const toggleNavbar = function () {
+  navbar.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("nav-active");
+}
+
+addEventOnElements(navTogglers, "click", toggleNavbar);
+
+
+
+/**
+ * HEADER & BACK TOP BTN
+ */
+
+const header = document.querySelector("[data-header]");
+const backTopBtn = document.querySelector("[data-back-top-btn]");
+
+let lastScrollPos = 0;
+
+const hideHeader = function () {
+  const isScrollBottom = lastScrollPos < window.scrollY;
+  if (isScrollBottom) {
+    header.classList.add("hide");
+  } else {
+    header.classList.remove("hide");
+  }
+
+  lastScrollPos = window.scrollY;
+}
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= 50) {
+    header.classList.add("active");
+    backTopBtn.classList.add("active");
+    hideHeader();
+  } else {
+    header.classList.remove("active");
+    backTopBtn.classList.remove("active");
+  }
+});
+
+
+
+/**
+ * HERO SLIDER
+ */
+
+const heroSlider = document.querySelector("[data-hero-slider]");
+const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
+const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
+const heroSliderNextBtn = document.querySelector("[data-next-btn]");
+
+let currentSlidePos = 0;
+let lastActiveSliderItem = heroSliderItems[0];
+
+const updateSliderPos = function () {
+  lastActiveSliderItem.classList.remove("active");
+  heroSliderItems[currentSlidePos].classList.add("active");
+  lastActiveSliderItem = heroSliderItems[currentSlidePos];
+}
+
+const slideNext = function () {
+  if (currentSlidePos >= heroSliderItems.length - 1) {
+    currentSlidePos = 0;
+  } else {
+    currentSlidePos++;
+  }
+
+  updateSliderPos();
+}
+
+heroSliderNextBtn.addEventListener("click", slideNext);
+
+const slidePrev = function () {
+  if (currentSlidePos <= 0) {
+    currentSlidePos = heroSliderItems.length - 1;
+  } else {
+    currentSlidePos--;
+  }
+
+  updateSliderPos();
+}
+
+heroSliderPrevBtn.addEventListener("click", slidePrev);
+
+/**
+ * auto slide
+ */
+
+let autoSlideInterval;
+
+const autoSlide = function () {
+  autoSlideInterval = setInterval(function () {
+    slideNext();
+  }, 7000);
+}
+
+addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
+  clearInterval(autoSlideInterval);
+});
+
+addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
+
+window.addEventListener("load", autoSlide);
+
+
+
+/**
+ * PARALLAX EFFECT
+ */
+
+const parallaxItems = document.querySelectorAll("[data-parallax-item]");
+
+let x, y;
+
+window.addEventListener("mousemove", function (event) {
+
+  x = (event.clientX / window.innerWidth * 10) - 5;
+  y = (event.clientY / window.innerHeight * 10) - 5;
+
+  // reverse the number eg. 20 -> -20, -5 -> 5
+  x = x - (x * 2);
+  y = y - (y * 2);
+
+  for (let i = 0, len = parallaxItems.length; i < len; i++) {
+    x = x * Number(parallaxItems[i].dataset.parallaxSpeed);
+    y = y * Number(parallaxItems[i].dataset.parallaxSpeed);
+    parallaxItems[i].style.transform = `translate3d(${x}px, ${y}px, 0px)`;
+  }
+
+});
+  </script>
+
+
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></scrip>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          let menus = [];
+
+          document.querySelectorAll('.grid-list > li').forEach(function(menuItemElem) {
+              let menuItem = {
+                  namaMenu: menuItemElem.querySelector('.card-title').textContent,
+                  deskripsiMenu: menuItemElem.querySelector('.card-text').textContent,
+                  hargaMenu: parseInt(menuItemElem.querySelector('.title-2').textContent.replace('Rp ', '').replace('.', '')),
+                  category: menuItemElem.getAttribute('data-category'),
+                  gambarMenuPath: menuItemElem.querySelector('.img-cover').src,
+                  recommended: false // Anda bisa menambahkan logika untuk menentukan ini
+              };
+
+              menus.push(menuItem);
+          });
+
+          fetch('/api/savemenu', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(menus)
+          })
+          .then(response => response.json())
+          .then(data => {
+              console.log('Success:', data);
+          })
+          .catch((error) => {
+              console.error('Error:', error);
+          });
+      });
+  </script>
+
+</body>
+
+</html>

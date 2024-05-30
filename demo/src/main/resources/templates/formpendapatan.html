@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendataan Pendapatan dan Pengeluaran</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/formpendapatan.css">
+    <link rel="icon" type="image/svg+xml" th:href="@{/assets/img/favicon.svg}">
+</head>
+<body>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pendataan Pendapatan dan Pengeluaran</h5>
+                        <form action="/simpanpendapatan" method="post">
+                            <div class="row mb-3">
+                                <label for="pendapatan" class="col-sm-4 col-form-label">Pendapatan</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" id="pendapatan" name="pendapatan" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="pengeluaran" class="col-sm-4 col-form-label">Pengeluaran</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" id="pengeluaran" name="pengeluaran" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="tanggal" class="col-sm-4 col-form-label">Tanggal</label>
+                                <div class="col-sm-8">
+                                    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

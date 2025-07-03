@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Contact</title>
+    <link th:href="@{/assets/css/editcontact.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-card">
+            <h2 class="form-title">Contact Form</h2>
+            <form action="/admin/contact" method="post">
+                <input type="hidden" name="id" th:value="${contact.id}">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" th:value="${contact.location}">
+                
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" th:value="${contact.phone}">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" th:value="${contact.email}">
+                
+                <label for="whatsapp">WhatsApp:</label>
+                <input type="text" id="whatsapp" name="whatsapp" th:value="${contact.whatsapp}">
+                
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>    
+    <a th:href="@{/admin/contact}">Back to contact list</a>
+</body>
+</html>

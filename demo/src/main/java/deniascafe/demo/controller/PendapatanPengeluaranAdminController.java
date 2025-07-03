@@ -1,4 +1,4 @@
-package deniascafe.demo.controller;
+/*package deniascafe.demo.controller;
 
 import deniascafe.demo.model.PendapatanPengeluaran;
 import deniascafe.demo.service.PendapatanPengeluaranService;
@@ -49,3 +49,4 @@ public ResponseEntity<Void> deletePendapatanPengeluaran(@PathVariable Long id) {
     return ResponseEntity.ok().build();
 }
 }
+*/

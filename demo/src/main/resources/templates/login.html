@@ -21,14 +21,14 @@
             <p class="desc">Login akun Anda untuk mengelola web Denias Cafe</p>
             <form th:action="@{/login}" method="post" th:object="${admin}">
                 <div class="input-container">
-                    <input type="email" placeholder="Masukkan alamat email Anda" th:field="*{email}" autofocus>
+                    <input type="email" placeholder="Masukkan email Anda" th:field="*{email}" autofocus>
                 </div>
                 <div class="input-container">
                     <input type="password" placeholder="Masukkan password Anda" th:field="*{password}">
                 </div>
                 <div class="account-controls">
                     <a th:href="@{/forgot-password}">Lupa Password?</a>
-                    <button type="submit">Next <i class="fas fa-solid fa-angle-right"></i></button>
+                    <button type="submit"> lanjut <i class="fas fa-solid fa-angle-right"></i></button>
                 </div>                
             </form>
 

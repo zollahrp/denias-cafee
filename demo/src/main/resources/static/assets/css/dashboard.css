@@ -1222,3 +1222,69 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+
+/*Dark Mode*/
+/* Default Light Mode Styles */
+body {
+  background-color: white;
+  color: black;
+}
+
+.card {
+  background-color: white;
+  color: black;
+}
+
+.sidebar, .header, .footer {
+  background-color: #f8f9fa;
+  color: black;
+}
+
+.breadcrumb {
+  background-color: #e9ecef;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.card.dark-mode {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+.sidebar.dark-mode, .header.dark-mode, .footer.dark-mode {
+  background-color: #1f1f1f;
+  color: white;
+  border-color: #333;
+}
+
+.breadcrumb.dark-mode {
+  background-color: #2a2a2a;
+}
+
+.text-danger {
+  color: #dc3545 !important; /* Warna merah Bootstrap */
+}
+
+/* Mengatur warna ikon dan lingkaran pada kartu pendapatan */
+.info-card.revenue-card .card-icon {
+  background-color: rgba(0, 128, 0, 0.1); /* Warna hijau muda */
+}
+
+/* Mengatur warna ikon dan lingkaran pada kartu pengeluaran */
+.info-card.expense-card .card-icon.expense-icon-red {
+  background-color: rgba(255, 0, 0, 0.1); /* Warna merah muda */
+}
+
+.text-success {
+  color: #28a745 !important; /* Warna hijau untuk ikon pendapatan */
+}
+
+.text-danger {
+  color: #dc3545 !important; /* Warna merah untuk ikon pengeluaran */
+}

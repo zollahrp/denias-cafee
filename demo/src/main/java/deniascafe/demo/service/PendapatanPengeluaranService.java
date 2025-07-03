@@ -26,7 +26,7 @@ public class PendapatanPengeluaranService {
         System.out.println("Menghapus dari repository id: " + id);
         repository.deleteById(id);
     }
-
+    
     public List<PendapatanPengeluaran> findAll() {
         return repository.findAll();
     }

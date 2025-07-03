@@ -18,4 +18,13 @@ public class VerifikasiController {
             return "Kode verifikasi salah. Coba lagi.";
         }
     }
+
+    @PutMapping("/verifikasi/{id}")
+    public String updateVerifikasi(@PathVariable Long id, @RequestParam String code) {
+        if (verifikasiService.updateVerifikasi(id, code)) {
+            return "Update berhasil!";
+        } else {
+            return "Update gagal. Coba lagi.";
+        }
+    }
 }

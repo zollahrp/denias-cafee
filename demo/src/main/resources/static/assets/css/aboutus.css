@@ -1559,3 +1559,12 @@ footer .copyright {
     }
   }
 }
+
+#adminLoginButton {
+  color: white; /* Mengubah warna teks menjadi putih */
+  background-color: transparent; /* Warna latar belakang tombol */
+  border: none; /* Menghilangkan border default tombol */
+  padding: 10px 20px; /* Padding tombol */
+  font-size: 16px; /* Ukuran teks tombol */
+  cursor: pointer; /* Menambahkan kursor pointer saat hover */
+}

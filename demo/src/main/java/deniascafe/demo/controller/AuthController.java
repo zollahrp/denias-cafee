@@ -1,7 +1,10 @@
 package deniascafe.demo.controller;
 
 import deniascafe.demo.model.Admin;
+import deniascafe.demo.model.Menu;
 import deniascafe.demo.service.AdminService;
+import deniascafe.demo.service.MenuService;
+import deniascafe.demo.service.VisitService;
 import deniascafe.demo.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,13 +12,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.servlet.http.HttpSession;
+
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Controller
+@SessionAttributes("totalVisits")
 public class AuthController {
     @Autowired
     private AdminService adminService;
+
+    @Autowired
+    private VisitService visitService;
+
+    @Autowired
+    private MenuService menuService;
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -161,4 +175,58 @@ public String profile(Model model, @RequestHeader(value = "Authorization", requi
     public String verifikasi() {
     return "verifikasi";
     }
+
+    @GetMapping("/pegawai-manager")
+    public String manageAdmins(Model model) {
+        model.addAttribute("admins", adminService.getAllAdmins());
+        return "pegawai-manager";
+    }
+
+    @PostMapping("/pegawai-manager/delete/{id}")
+    public String deleteAdmin(@PathVariable Long id) {
+        adminService.deleteAdminById(id);
+        return "redirect:/pegawai-manager";
+    }
+
+
+    private AtomicInteger totalVisits = new AtomicInteger(0);
+
+    @GetMapping("/dashboard-manager")
+    public String dashboardManager(Model model) {
+        Long totalVisits = visitService.getVisit().getTotalVisits();
+        int totalAdmins = adminService.getAllAdmins().size();
+
+        model.addAttribute("totalVisits", totalVisits);
+        model.addAttribute("totalAdmins", totalAdmins);
+
+        return "dashboard-manager";
+    }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        // Increase total visits
+        visitService.incrementVisit();
+        Long totalVisits = visitService.getVisit().getTotalVisits();
+        model.addAttribute("totalVisits", totalVisits);
+
+        // Get recommended menus
+        List<Menu> recommendedMenus = menuService.getRecommendedMenus();
+        model.addAttribute("recommendedMenus", recommendedMenus);
+
+        return "home";
+    }
+
+    @GetMapping("/")
+    public String viewHomePage(Model model) {
+    // Increase total visits
+    visitService.incrementVisit();
+    Long totalVisits = visitService.getVisit().getTotalVisits();
+    model.addAttribute("totalVisits", totalVisits);
+
+    // Get recommended menus
+    List<Menu> recommendedMenus = menuService.getRecommendedMenus();
+    model.addAttribute("recommendedMenus", recommendedMenus);
+
+    return "home";
+}
 }

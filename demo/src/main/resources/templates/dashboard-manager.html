@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard - Denias Cafe Manager</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link th:href="@{/assets/img/favicon.png}" rel="icon" />
+    <link
+      th:href="@{/assets/img/apple-touch-icon.png}"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}"
+      rel="stylesheet"
+    />
+    <link
+      th:href="@{/assets/vendor/bootstrap-icons/bootstrap-icons.css}"
+      rel="stylesheet"
+    />
+    <link
+      th:href="@{/assets/vendor/boxicons/css/boxicons.min.css}"
+      rel="stylesheet"
+    />
+    <link th:href="@{/assets/vendor/quill/quill.snow.css}" rel="stylesheet" />
+    <link th:href="@{/assets/vendor/quill/quill.bubble.css}" rel="stylesheet" />
+    <link
+      th:href="@{/assets/vendor/remixicon/remixicon.css}"
+      rel="stylesheet"
+    />
+    <link
+      th:href="@{/assets/vendor/simple-datatables/style.css}"
+      rel="stylesheet"
+    />
+
+    <link th:href="@{/assets/css/dashboard-manager.css}" rel="stylesheet" />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      th:href="@{/assets/img/favicon.svg}"
+    />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="/dashboard" class="logo d-flex align-items-center">
+          <img th:src="@{/assets/img/logodb.png}" alt="Logo" />
+          <span class="d-none d-lg-block">Denias Cafe</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center" onsubmit="return false;">
+          <input type="text" id="searchInput" placeholder="Search" title="Enter search keyword" oninput="filterRows()" />
+          <button type="submit" title="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+      
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+      </nav>
+
+      <li class="nav-item dropdown pe-3">
+        <a
+          class="nav-link nav-profile d-flex align-items-center pe-0"
+          href="#"
+          data-bs-toggle="dropdown"
+        >
+          <span class="d-none d-md-block dropdown-toggle ps-2"
+            >Denias Cafe</span
+          > </a
+        ><!-- End Profile Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <li class="dropdown-header">
+            <h6>Denias Cafe</h6>
+            <span>Manager</span>
+          </li>
+          <li class="nav-item dropdown"></li>
+          <li>
+            <a
+              class="dropdown-item d-flex align-items-center"
+              href="/logout-manager"
+            >
+              <i class="bi bi-box-arrow-right"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+
+          <!-- End Profile Dropdown Items -->
+          <!-- End Profile Nav -->
+
+          <!-- End Icons Navigation -->
+        </header>
+
+          <!-- End Header -->
+
+          <!-- ======= Sidebar ======= -->
+          <aside id="sidebar" class="sidebar">
+            <ul class="sidebar-nav" id="sidebar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/dashboard-manager">
+                  <i class="bi bi-grid"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <!-- End Dashboard Nav -->
+
+              <li class="nav-item">
+                <a class="nav-link" href="/pegawai-manager">
+                  <i class="bi bi-grid"></i>
+                  <span>Pegawai</span>
+                </a>
+              </li>
+              <!-- End Menu Nav -->
+
+              <li class="nav-item">
+                <a class="nav-link" href="/profile-manager">
+                  <i class="bi bi-grid"></i>
+                  <span>Profile</span>
+                </a>
+              </li>
+              <!-- End Menu Nav -->
+            </ul>
+          </aside>
+          <!-- End Sidebar-->
+
+          <main id="main" class="main">
+            <section class="section dashboard">
+              <div class="row">
+                <!-- Left side columns -->
+                <div class="col-lg-12">
+                  <div class="row">
+                    <!-- Total Visits Card -->
+                    <div class="col-xxl-6 col-md-6">
+                      <div class="card info-card revenue-card">
+                        <div class="card-body">
+                          <h5 class="card-title">Total Visits</h5>
+                          <div class="d-flex align-items-center">
+                            <div
+                              class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                            >
+                              <i class="bi bi-eye"></i>
+                            </div>
+                            <div class="ps-3">
+                              <h6 th:text="${totalVisits}">0</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Total Visits Card -->
+
+                    <!-- Total Admins Card -->
+                    <div class="col-xxl-6 col-md-6">
+                      <div class="card info-card revenue-card">
+                        <div class="card-body">
+                          <h5 class="card-title">Total Admins</h5>
+                          <div class="d-flex align-items-center">
+                            <div
+                              class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+                            >
+                              <i class="bi bi-person"></i>
+                            </div>
+                            <div class="ps-3">
+                              <h6 th:text="${totalAdmins}">0</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Total Admins Card -->
+
+                    <h1>Update Verifikasi</h1>
+                    <form id="updateVerifikasiForm">
+                      <label for="id">ID Verifikasi:</label>
+                      <input type="text" id="id" name="id" /><br /><br />
+
+                      <label for="code">Kode Verifikasi Baru:</label>
+                      <input type="text" id="code" name="code" /><br /><br />
+
+                      <button type="button" onclick="updateVerifikasi()">
+                        Update
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+          <!-- End #main -->
+
+          <!--SCRIPT UNTUK UPDATE-->
+          <script>
+            function updateVerifikasi() {
+              const id = document.getElementById("id").value;
+              const code = document.getElementById("code").value;
+
+              fetch(`/api/verifikasi/${id}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams({
+                  code: code,
+                }),
+              })
+                .then((response) => response.text())
+                .then((data) => {
+                  alert(data);
+                })
+                .catch((error) => console.error("Error:", error));
+            }
+          </script>
+
+          <!-- ======= Footer ======= -->
+          <footer id="footer" class="footer">
+            <div class="copyright">
+              &copy; Copyright <strong><span>Denias Cafe</span></strong
+              >. All Rights Reserved
+            </div>
+            <div class="credits"></div>
+          </footer>
+          <!-- End Footer -->
+
+          <a
+            href="#"
+            class="back-to-top d-flex align-items-center justify-content-center"
+            ><i class="bi bi-arrow-up-short"></i
+          ></a>
+
+          <!-- Vendor JS Files -->
+          <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+          <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="assets/vendor/chart.js/chart.umd.js"></script>
+          <script src="assets/vendor/echarts/echarts.min.js"></script>
+          <script src="assets/vendor/quill/quill.js"></script>
+          <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+          <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+          <script src="assets/vendor/php-email-form/validate.js"></script>
+
+          <!-- main JS File -->
+          <script src="assets/js/main.js"></script>
+          <!-- SweetAlert JS -->
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        </ul>
+      </li>
+    </header>
+  </body>
+</html>

@@ -14,6 +14,7 @@ public class Menu {
     
     private String category;
     private String deskripsiMenu;
+    private String deskripsiMenuEn;
     private String gambarPath;
     private BigDecimal hargaMenu;
     private String namaMenu;
@@ -42,6 +43,14 @@ public class Menu {
 
     public void setDeskripsiMenu(String deskripsiMenu) {
         this.deskripsiMenu = deskripsiMenu;
+    }
+
+    public String getDeskripsiMenuEn() {
+        return deskripsiMenuEn;
+    }
+
+    public void setDeskripsiMenuEn(String deskripsiMenuEn) {
+        this.deskripsiMenuEn = deskripsiMenuEn;
     }
 
     public BigDecimal getHargaMenu() {
@@ -78,5 +87,9 @@ public class Menu {
 
     public void setImage(String gambarPath) {
         this.gambarPath = gambarPath;
+    }
+
+    public String getDeskripsiKey() {
+        return "menu.description." + this.idMenu;
     }
 }

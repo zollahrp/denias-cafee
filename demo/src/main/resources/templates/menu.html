@@ -26,7 +26,9 @@
 
     <!-- Custom CSS link -->
     <link rel="stylesheet" href="./assets/css/menu.css" />
-    <!-- Link to custom CSS file -->
+
+    <!-- ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Preload images for performance optimization -->
     <link rel="preload" as="image" href="./assets/img/dpn-slider-1.jpg">
@@ -50,28 +52,39 @@
           <div class="icon">
             <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
           </div>
-          <span class="span"> Denias Cafe, Sulawesi Selatan, Indonesia </span>
+          <span class="span" th:text="#{topbar.location_id}"></span>
         </address>
+
         <div class="separator"></div>
+
         <div class="topbar-item item-2">
           <div class="icon">
             <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
           </div>
-          <span class="span">Daily : 9.00 am - 11.00 pm</span>
+          <span class="span" th:text="#{topbar.opening_hours_id}"></span>
         </div>
-        <a href="tel:+11234567890" class="topbar-item link">
+
+        <a href="tel:+6281355906775" class="topbar-item link">
           <div class="icon">
             <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
           </div>
-          <span class="span">+62 852 4244 1054</span>
+          <span class="span" th:text="#{topbar.phone_id}"></span>
         </a>
+
         <div class="separator"></div>
-        <a href="mailto:booking@restaurant.com" class="topbar-item link">
+
+        <a href="mailto:deniascafe@gmail.com" class="topbar-item link">
           <div class="icon">
             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
           </div>
-          <span class="span">deniascafe@gmail.com</span>
+          <span class="span" th:text="#{topbar.email_id}"></span>
         </a>
+
+        <!-- Language Selector -->
+        <div class="topbar-item">
+          <a href="?lang=id" class="btn btn-primary">Indonesia</a>
+          <a href="?lang=en" class="btn btn-secondary">English</a>
+        </div>
       </div>
     </div>
 
@@ -98,71 +111,75 @@
               alt="Denias Cafe - Home"
             />
           </a>
-          <!--Navbar-->
+          <!-- Navbar -->
           <ul class="navbar-list">
             <li class="navbar-item">
-              <a href="/home" class="navbar-link hover-underline">
+              <a href="/" class="navbar-link hover-underline">
                 <div class="separator"></div>
-                <span class="span">Home</span>
+                <span class="span" th:text="#{navbar.home_id}"></span>
               </a>
             </li>
+
             <li class="navbar-item">
-              <a href="#" class="navbar-link hover-underline active">
+              <a href="/menu" class="navbar-link hover-underline active">
                 <div class="separator"></div>
-                <span class="span">Menu</span>
+                <span class="span" th:text="#{navbar.menu_id}"></span>
               </a>
             </li>
+
             <li class="navbar-item">
               <a href="/aboutus" class="navbar-link hover-underline">
                 <div class="separator"></div>
-                <span class="span">About Us</span>
+                <span class="span" th:text="#{navbar.aboutus_id}"></span>
               </a>
             </li>
+
             <li class="navbar-item">
               <a href="/pagereview" class="navbar-link hover-underline">
                 <div class="separator"></div>
-                <span class="span">Review</span>
+                <span class="span" th:text="#{navbar.review_id}"></span>
               </a>
             </li>
+
             <li class="navbar-item">
               <a href="/contact" class="navbar-link hover-underline">
                 <div class="separator"></div>
-                <span class="span">Contact</span>
+                <span class="span" th:text="#{navbar.contact_id}"></span>
               </a>
             </li>
           </ul>
-          <!--Navbar di HP-->
-          <div class="text-center">
-            <p class="headline-1 navbar-title">Kunjungi Kami</p>
-            <address class="body-4">
-              Denias Cafe, Sulawesi Selatan, Indonesia <br />
-              Sulawesi Selatan, Indonesia
-            </address>
-            <p class="body-4 navbar-text">Daily : 9.00 am - 11.00 pm</p>
-            <a href="mailto:deniascafe@gmail.com" class="body-4 sidebar-link"
-              >deniascafe@gmail.com</a
-            >
-            <div class="separator"></div>
-            <p class="contact-label">Booking Request</p>
-            <a
-              href="tel:+6281312343829"
-              class="body-1 contact-number hover-underline"
-            >
-              +62 813 1234 3829
-            </a>
-          </div>
-        </nav>
-        <a href="https://wa.me/+6285242441054" class="btn btn-secondary">
-          <span class="text text-1">Pesan Meja</span>
-          <span class="text text-2" aria-hidden="true">Pesan Meja</span>
-        </a>
-        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-          <span class="line line-3"></span>
-        </button>
-        <div class="overlay" data-nav-toggler data-overlay></div>
+
+      <!--Navbar di HP-->
+      <div class="text-center">
+        <p class="headline-1 navbar-title" th:text="#{navbar.visit_us_id}"></p>
+
+        <address class="body-4">
+          <span th:text="#{navbar.address_id}"></span> <br>
+        </address>
+
+        <p class="body-4 navbar-text" th:text="#{navbar.opening_hours_id}"></p>
+  <a href="mailto:deniascafe@gmail.com" class="body-4 sidebar-link" th:text="#{navbar.email_id}"></a>
+  <div class="separator"></div>
+  <p class="contact-label" th:text="#{navbar.booking_request_id}"></p>
+  <a href="tel:+6281355906775" class="body-1 contact-number hover-underline" th:text="#{navbar.phone_id}"></a>
       </div>
+
+    </nav>
+
+    <a href="https://wa.me/+6281355906775" class="btn btn-secondary">
+      <span class="text text-1" th:text="#{navbar.book_table_id}"></span>
+      <span class="text text-2" aria-hidden="true" th:text="#{navbar.book_table_id}"></span>
+    </a>
+
+    <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+    </button>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+
+  </div>
     </header>
 
     <main>
@@ -174,35 +191,35 @@
             <br /><br /><br />
 
             <p class="section-subtitle text-center">
-              Top Menu
+              Menu
             </p>
-            <!-- Tombol Kategori -->
-            <div class="button-container">
-              <button class="btn btn-secondary active" data-category="all">
-                <span class="text text-1">All</span>
-                <span class="text text-2" aria-hidden="true">All</span>
-              </button>
-              <button class="btn btn-secondary" data-category="coffee">
-                <span class="text text-1">Coffee</span>
-                <span class="text text-2" aria-hidden="true">Coffee</span>
-              </button>
-              <button class="btn btn-secondary" data-category="food">
-                <span class="text text-1">Makanan</span>
-                <span class="text text-2" aria-hidden="true">Makanan</span>
-              </button>
-              <button class="btn btn-secondary" data-category="choco">
-                <span class="text text-1">Choco</span>
-                <span class="text text-2" aria-hidden="true">Choco</span>
-              </button>
-              <button class="btn btn-secondary" data-category="juice">
-                <span class="text text-1">Juice</span>
-                <span class="text text-2" aria-hidden="true">Juice</span>
-              </button>
-              <button class="btn btn-secondary" data-category="tea">
-                <span class="text text-1">Tea</span>
-                <span class="text text-2" aria-hidden="true">Tea</span>
-              </button>
-            </div>
+                <!-- Tombol Kategori -->
+                <div class="button-container">
+                  <button class="btn btn-secondary active" data-category="all">
+                      <span class="text text-1" th:text="#{category.all}">All</span>
+                      <span class="text text-2" aria-hidden="true" th:text="#{category.all}">All</span>
+                  </button>
+                  <button class="btn btn-secondary" data-category="coffee">
+                      <span class="text text-1" th:text="#{category.coffee}">Coffee</span>
+                      <span class="text text-2" aria-hidden="true" th:text="#{category.coffee}">Coffee</span>
+                  </button>
+                  <button class="btn btn-secondary" data-category="food">
+                      <span class="text text-1" th:text="#{category.food}">Makanan</span>
+                      <span class="text text-2" aria-hidden="true" th:text="#{category.food}">Makanan</span>
+                  </button>
+                  <button class="btn btn-secondary" data-category="choco">
+                      <span class="text text-1" th:text="#{category.choco}">Choco</span>
+                      <span class="text text-2" aria-hidden="true" th:text="#{category.choco}">Choco</span>
+                  </button>
+                  <button class="btn btn-secondary" data-category="juice">
+                      <span class="text text-1" th:text="#{category.juice}">Juice</span>
+                      <span class="text text-2" aria-hidden="true" th:text="#{category.juice}">Juice</span>
+                  </button>
+                  <button class="btn btn-secondary" data-category="tea">
+                      <span class="text text-1" th:text="#{category.tea}">Tea</span>
+                      <span class="text text-2" aria-hidden="true" th:text="#{category.tea}">Tea</span>
+                  </button>
+                </div>
             <br /><br />
 
             <!--
@@ -216,7 +233,7 @@
           
 
             <!--tyhemleaf-->
-            <ul class="grid-list">
+          <ul class="grid-list">
               <li th:each="menu : ${coffees}" data-category="coffee">
                   <div class="menu-card hover:card">
                       <figure class="card-banner img-holder" style="--width: 100; --height: 100">
@@ -227,34 +244,32 @@
                               <h3 class="title-3">
                                   <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
                               </h3>
-                              <!-- Add Recommended Label -->
                               <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
                               <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}">13,000</span></span>
-                              
                           </div>
-                          <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                          <!-- Language-based Description -->
+                          <p class="card-text label-1" th:text="${lang == 'en' ? menu.deskripsiMenuEn : menu.deskripsiMenu}">Menu Description</p>
                       </div>
                   </div>
               </li>
               <li th:each="menu : ${foods}" data-category="food">
-                <div class="menu-card hover:card">
-                    <figure class="card-banner img-holder" style="--width: 100; --height: 100">
-                        <img th:src="@{${menu.gambarPath}}" width="100" height="100" loading="lazy" th:alt="${menu.namaMenu}" class="img-cover"/>
-                    </figure>
-                    <div>
-                        <div class="title-wrapper">
-                            <h3 class="title-3">
-                                <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
-                            </h3>
-                            <!-- Add Recommended Label -->
-                            <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
-                            <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}">13,000</span></span>
-                            
-                        </div>
-                        <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
-                    </div>
-                </div>
-            </li>
+                  <div class="menu-card hover:card">
+                      <figure class="card-banner img-holder" style="--width: 100; --height: 100">
+                          <img th:src="@{${menu.gambarPath}}" width="100" height="100" loading="lazy" th:alt="${menu.namaMenu}" class="img-cover"/>
+                      </figure>
+                      <div>
+                          <div class="title-wrapper">
+                              <h3 class="title-3">
+                                  <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
+                              </h3>
+                              <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                              <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}">13,000</span></span>
+                          </div>
+                          <!-- Language-based Description -->
+                          <p class="card-text label-1" th:text="${lang == 'en' ? menu.deskripsiMenuEn : menu.deskripsiMenu}">Menu Description</p>
+                      </div>
+                  </div>
+              </li>
               <li th:each="menu : ${chocos}" data-category="choco">
                   <div class="menu-card hover:card">
                       <figure class="card-banner img-holder" style="--width: 100; --height: 100">
@@ -265,12 +280,11 @@
                               <h3 class="title-3">
                                   <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
                               </h3>
-                              <!-- Add Recommended Label -->
-                            <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                              <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
                               <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}">13,000</span></span>
-                              
                           </div>
-                          <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                          <!-- Language-based Description -->
+                          <p class="card-text label-1" th:text="${lang == 'en' ? menu.deskripsiMenuEn : menu.deskripsiMenu}">Menu Description</p>
                       </div>
                   </div>
               </li>
@@ -285,10 +299,10 @@
                                   <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
                               </h3>
                               <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
-                              <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}"></span></span><!-- Add Recommended Label -->
-                              
+                              <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}"></span></span>
                           </div>
-                          <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                          <!-- Language-based Description -->
+                          <p class="card-text label-1" th:text="${lang == 'en' ? menu.deskripsiMenuEn : menu.deskripsiMenu}">Menu Description</p>
                       </div>
                   </div>
               </li>
@@ -302,12 +316,11 @@
                               <h3 class="title-3">
                                   <a href="#" class="card-title" th:text="${menu.namaMenu}">Menu Name</a>
                               </h3>
-                              <!-- Add Recommended Label -->
-                            <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
+                              <span th:if="${menu.recommended}" class="badge label-1">Recommended</span>
                               <span class="span title-2">Rp.<span th:text="${#numbers.formatDecimal(menu.hargaMenu, 0, 'POINT', 0, 'COMMA')}"></span></span>
-                              
                           </div>
-                          <p class="card-text label-1" th:text="${menu.deskripsiMenu}">Menu Description</p>
+                          <!-- Language-based Description -->
+                          <p class="card-text label-1" th:text="${lang == 'en' ? menu.deskripsiMenuEn : menu.deskripsiMenu}">Menu Description</p>
                       </div>
                   </div>
               </li>
@@ -338,50 +351,48 @@
           <div class="row">
             <div class="col">
               <img src="./assets/img/Logo.svg" class="footer_logo" />
-              <p class="footer_about">
-                Selamat datang di Denias Cafe, tempat menikmati kopi, jus, tea,
-                snack dan layanan ramah dalam suasana nyaman. Nikmati minuman
-                dan makanan kami yang disiapkan dengan penuh perhatian.
-              </p>
+              <p
+                class="footer_about"
+                th:text="#{footer.welcome_message_id}"
+              ></p>
             </div>
             <div class="col">
-              <h3>
-                Office
-                <div class="bottom_line"><span></span></div>
-              </h3>
-              <p>Jl. Sungguminahasa - Takalar</p>
-              <p>Tamallayang</p>
-              <p>Sulawesi Selatan, 92153, Indonesia</p>
-              <p class="footer_email">deniascafe@gmail.com</p>
-              <h4>+62 85242441054</h4>
+              <h3 th:text="#{footer.office_id}"></h3>
+              <p th:text="#{footer.address1_id}"></p>
+              <p th:text="#{footer.address2_id}"></p>
+              <p th:text="#{footer.address3_id}"></p>
+              <p class="footer_email" th:text="#{footer.email_id}"></p>
+              <h4 th:text="#{footer.phone_id}"></h4>
             </div>
             <div class="col">
-              <h3>
-                Links
-                <div class="bottom_line"><span></span></div>
-              </h3>
+              <h3 th:text="#{footer.links_id}"></h3>
               <ul>
-                <li><a href="/home">HOME</a></li>
-                <li><a href="/menu">MENU</a></li>
-                <li><a href="/aboutus">ABOUT US</a></li>
-                <li><a href="/pagereview">REVIEW</a></li>
-                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/home" th:text="#{footer.home_id}"></a></li>
+                <li><a href="/menu" th:text="#{footer.menu_id}"></a></li>
+                <li>
+                  <a href="/aboutus" th:text="#{footer.aboutus_id}"></a>
+                </li>
+                <li>
+                  <a href="/pagereview" th:text="#{footer.review_id}"></a>
+                </li>
+                <li>
+                  <a href="/contact" th:text="#{footer.contact_id}"></a>
+                </li>
               </ul>
             </div>
             <div class="col">
-              <h3>
-                Khusus Admin
-                <div class="bottom_line"><span></span></div>
-              </h3>
-              <a href="/awallogin">Admin Login</a> <br />
-
+              <h3 th:text="#{footer.admin_id}"></h3>
+              <button id="adminLoginButton">Admin Login</button>
               <div class="social_icons">
-                <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+                <ion-icon
+                  class="social_icon"
+                  name="logo-whatsapp"
+                ></ion-icon>
               </div>
             </div>
           </div>
           <hr />
-          <p class="copyright">Denias Cafe Ⓒ 2024 - All Rights Reserved</p>
+          <p class="copyright" th:text="#{footer.copyright_id}"></p>
         </footer>
 
           <!-- 
@@ -403,6 +414,75 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!--VERIFIKASI-->
+  <script>
+    document.getElementById('adminLoginButton').addEventListener('click', function() {
+        Swal.fire({
+            title: 'Apakah Anda Pegawai Disini?',
+            showDenyButton: true,
+            confirmButtonText: 'Iya',
+            denyButtonText: 'Tidak',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showVerificationModal();
+            } else if (result.isDenied) {
+                window.location.href = '/home';
+            }
+        });
+    });
+
+    function showVerificationModal() {
+        Swal.fire({
+            title: 'Masukkan Kode Verifikasi',
+            input: 'password',
+            inputLabel: 'Kode Verifikasi',
+            showCancelButton: true,
+            confirmButtonText: 'Verifikasi',
+            preConfirm: (code) => {
+                return fetch('/api/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        'code': code
+                    })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if (data === 'Verifikasi berhasil!') {
+                        Swal.fire({
+                            title: 'Verifikasi berhasil!',
+                            text: 'Anda akan diarahkan ke laman login',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = '/login';
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'Kode verifikasi salah',
+                            text: 'Coba lagi.',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        title: 'Terjadi kesalahan',
+                        text: 'Coba lagi.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                });
+            }
+        });
+    }
+</script>
 
 
   </body>

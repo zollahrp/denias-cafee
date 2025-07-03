@@ -73,4 +73,42 @@ public ResponseEntity<Void> deleteReview(@PathVariable Long commentId) {
     }
 }
 
+    @GetMapping("/getAverageRating")
+    public Map<String, Double> getAverageRating() {
+        return reviewService.calculateAverageRating();
+    }
+
+    @GetMapping("/getDominantEmoji")
+    public Map<String, String> getDominantEmoji() {
+        List<Review> reviews = reviewRepository.findAll();
+        Map<String, Double> averages = new HashMap<>();
+        averages.put("angry", 0.0);
+        averages.put("sad", 0.0);
+        averages.put("ok", 0.0);
+        averages.put("good", 0.0);
+        averages.put("happy", 0.0);
+
+        if (!reviews.isEmpty()) {
+            int totalReviews = reviews.size();
+            for (Review review : reviews) {
+                averages.put("angry", averages.get("angry") + review.getAngry());
+                averages.put("sad", averages.get("sad") + review.getSad());
+                averages.put("ok", averages.get("ok") + review.getOk());
+                averages.put("good", averages.get("good") + review.getGood());
+                averages.put("happy", averages.get("happy") + review.getHappy());
+            }
+            averages.replaceAll((k, v) -> v / totalReviews);
+        }
+
+        String dominantEmoji = averages.entrySet().stream()
+            .max(Map.Entry.comparingByValue())
+            .map(Map.Entry::getKey)
+            .orElse("no reviews");
+
+        Map<String, String> response = new HashMap<>();
+        response.put("dominantEmoji", dominantEmoji);
+
+        return response;
+    }
+
 }

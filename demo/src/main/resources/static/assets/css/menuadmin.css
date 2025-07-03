@@ -1278,3 +1278,138 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+/*ALERT*/
+
+/* Modal Form Styles */
+.swal2-modal {
+  font-family: 'Arial', sans-serif;
+}
+
+.swal2-input,
+.swal2-textarea,
+.swal2-file,
+.swal2-select {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fafafa;
+}
+
+.swal2-input:focus,
+.swal2-textarea:focus,
+.swal2-file:focus,
+.swal2-select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: #555;
+  display: block;
+  font-weight: bold;
+}
+
+input[type="file"] {
+  margin-bottom: 1rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Image Upload Styles */
+input[type="file"]::file-selector-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Custom styles for form inside SweetAlert2 */
+.swal2-content {
+  text-align: left;
+}
+
+.swal2-content label {
+  font-size: 0.9rem;
+}
+
+.swal2-content input[type="text"],
+.swal2-content input[type="number"],
+.swal2-content textarea,
+.swal2-content select {
+  margin-bottom: 1rem;
+}
+
+
+/* Additional CSS for table responsiveness */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table thead th {
+  white-space: nowrap;
+}
+
+.table img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjust table layout for smaller screens */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .table td {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    border-bottom: 1px solid #dee2e6;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}

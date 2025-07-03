@@ -1,13 +1,17 @@
 package deniascafe.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.LocaleResolver;
 import deniascafe.demo.model.Menu;
 import deniascafe.demo.service.MenuService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 
@@ -25,6 +30,9 @@ public class MenuController {
 
     @Autowired
     private MenuService menuService;
+
+    @Autowired
+    private LocaleResolver localeResolver;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MenuController.class);
 
@@ -54,43 +62,36 @@ public class MenuController {
     }
 
     @GetMapping("/menu")
-public String viewMenuPageAll(Model model) {
-    List<Menu> menus = menuService.getAllMenus();
-    List<Menu> coffees = menus.stream().filter(m -> "coffee".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
-    List<Menu> foods = menus.stream().filter(m -> "food".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
-    List<Menu> chocos = menus.stream().filter(m -> "choco".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
-    List<Menu> juices = menus.stream().filter(m -> "juice".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
-    List<Menu> teas = menus.stream().filter(m -> "tea".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
+    public String viewMenuPageAll(Model model, @RequestParam(value = "lang", defaultValue = "id") String lang, HttpServletRequest request, HttpServletResponse response) {
+        // Set the locale based on the 'lang' parameter
+        Locale locale = Locale.forLanguageTag(lang);
+        localeResolver.setLocale(request, response, locale);
+        LocaleContextHolder.setLocale(locale);
 
-    model.addAttribute("coffees", coffees);
-    model.addAttribute("foods", foods);
-    model.addAttribute("chocos", chocos);
-    model.addAttribute("juices", juices);
-    model.addAttribute("teas", teas);
+        List<Menu> menus = menuService.getAllMenus();
+        List<Menu> coffees = menus.stream().filter(m -> "coffee".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
+        List<Menu> foods = menus.stream().filter(m -> "food".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
+        List<Menu> chocos = menus.stream().filter(m -> "choco".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
+        List<Menu> juices = menus.stream().filter(m -> "juice".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
+        List<Menu> teas = menus.stream().filter(m -> "tea".equalsIgnoreCase(m.getCategory())).collect(Collectors.toList());
 
-    // Logging
-    LOGGER.info("Coffees: " + coffees);
-    LOGGER.info("Foods: " + foods);
-    LOGGER.info("Chocos: " + chocos);
-    LOGGER.info("Juices: " + juices);
-    LOGGER.info("Teas: " + teas);
+        model.addAttribute("coffees", coffees);
+        model.addAttribute("foods", foods);
+        model.addAttribute("chocos", chocos);
+        model.addAttribute("juices", juices);
+        model.addAttribute("teas", teas);
+        model.addAttribute("menus", menus);
+        model.addAttribute("lang", lang); // Tambahkan atribut lang ke model
 
-    return "menu";
-}
+        // Logging
+        LOGGER.info("Coffees: " + coffees);
+        LOGGER.info("Foods: " + foods);
+        LOGGER.info("Chocos: " + chocos);
+        LOGGER.info("Juices: " + juices);
+        LOGGER.info("Teas: " + teas);
 
-    @GetMapping("/home")
-    public String home(Model model) {
-        List<Menu> recommendedMenus = menuService.getRecommendedMenus();
-        model.addAttribute("recommendedMenus", recommendedMenus);
-        return "home";
+        return "menu";
     }
-    
-    @GetMapping("/")
-    public String viewHomePage(Model model) {
-    List<Menu> recommendedMenus = menuService.getRecommendedMenus();
-    model.addAttribute("recommendedMenus", recommendedMenus);
-    return "home";
-}
 
     @GetMapping("/menuadmin")
     public String viewMenuAdminPage(Model model) {

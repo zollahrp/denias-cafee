@@ -353,7 +353,9 @@ body.nav-active {
   display: flex;
   justify-content: center; /* Mengatur posisi tombol-tombol di tengah secara horizontal */
   gap: 15px; /* Ubah nilai gap sesuai dengan preferensi Anda */
+  flex-wrap: wrap; /* Menambahkan flex-wrap agar tombol bisa membungkus pada layar kecil */
 }
+
 .btn {
   position: relative;
   color: var(--gold-crayola);
@@ -420,6 +422,22 @@ body.nav-active {
 .btn-secondary .text-2 {
   color: var(--white);
 }
+
+/* Media queries untuk responsif */
+@media (max-width: 768px) {
+  .btn {
+      padding: 10px 35px;
+      font-size: calc(var(--fontSize-label-2) * 0.9);
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+      padding: 8px 25px;
+      font-size: calc(var(--fontSize-label-2) * 0.8);
+  }
+}
+
 
 .has-before,
 .has-after {
@@ -1620,3 +1638,13 @@ footer .copyright {
     }
   }
 }
+
+#adminLoginButton {
+  color: white; /* Mengubah warna teks menjadi putih */
+  background-color: transparent; /* Warna latar belakang tombol */
+  border: none; /* Menghilangkan border default tombol */
+  padding: 10px 20px; /* Padding tombol */
+  font-size: 16px; /* Ukuran teks tombol */
+  cursor: pointer; /* Menambahkan kursor pointer saat hover */
+}
+

@@ -21,7 +21,8 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
       rel="stylesheet"
     />
-    <!-- Link to Google Fonts -->
+    <!-- ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Custom CSS link -->
     <link rel="stylesheet" th:href="@{/assets/css/pagereview.css}" />
@@ -50,28 +51,39 @@
           <div class="icon">
             <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
           </div>
-          <span class="span"> Denias Cafe, Sulawesi Selatan, Indonesia </span>
+          <span class="span" th:text="#{topbar.location_id}"></span>
         </address>
+
         <div class="separator"></div>
+
         <div class="topbar-item item-2">
           <div class="icon">
             <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
           </div>
-          <span class="span">Daily : 9.00 am - 11.00 pm</span>
+          <span class="span" th:text="#{topbar.opening_hours_id}"></span>
         </div>
+
         <a href="tel:+6281355906775" class="topbar-item link">
           <div class="icon">
             <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
           </div>
-          <span class="span">+62 813 5590 6775</span>
+          <span class="span" th:text="#{topbar.phone_id}"></span>
         </a>
+
         <div class="separator"></div>
-        <a href="mailto:booking@restaurant.com" class="topbar-item link">
+
+        <a href="mailto:deniascafe@gmail.com" class="topbar-item link">
           <div class="icon">
             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
           </div>
-          <span class="span">deniascafe@gmail.com</span>
+          <span class="span" th:text="#{topbar.email_id}"></span>
         </a>
+
+        <!-- Language Selector -->
+        <div class="topbar-item">
+          <a href="?lang=id" class="btn btn-primary">Indonesia</a>
+          <a href="?lang=en" class="btn btn-secondary">English</a>
+        </div>
       </div>
     </div>
 
@@ -98,71 +110,75 @@
               alt="Denias Cafe - Home"
             />
           </a>
-          <!--Navbar-->
+          <!-- Navbar -->
           <ul class="navbar-list">
             <li class="navbar-item">
-              <a href="/home" class="navbar-link hover-underline">
+              <a href="/" class="navbar-link hover-underline">
                 <div class="separator"></div>
-                <span class="span">Home</span>
+                <span class="span" th:text="#{navbar.home_id}"></span>
               </a>
             </li>
+
             <li class="navbar-item">
               <a href="/menu" class="navbar-link hover-underline">
                 <div class="separator"></div>
-                <span class="span">Menu</span>
+                <span class="span" th:text="#{navbar.menu_id}"></span>
               </a>
             </li>
+
             <li class="navbar-item">
               <a href="/aboutus" class="navbar-link hover-underline">
                 <div class="separator"></div>
-                <span class="span">About Us</span>
+                <span class="span" th:text="#{navbar.aboutus_id}"></span>
               </a>
             </li>
+
             <li class="navbar-item">
               <a href="/pagereview" class="navbar-link hover-underline active">
                 <div class="separator"></div>
-                <span class="span">Review</span>
+                <span class="span" th:text="#{navbar.review_id}"></span>
               </a>
             </li>
+
             <li class="navbar-item">
               <a href="/contact" class="navbar-link hover-underline">
                 <div class="separator"></div>
-                <span class="span">Contact</span>
+                <span class="span" th:text="#{navbar.contact_id}"></span>
               </a>
             </li>
           </ul>
-          <!--Navbar di HP-->
-          <div class="text-center">
-            <p class="headline-1 navbar-title">Kunjungi Kami</p>
-            <address class="body-4">
-              Denias Cafe, Sulawesi Selatan, Indonesia <br />
-              Sulawesi Selatan, Indonesia
-            </address>
-            <p class="body-4 navbar-text">Daily : 9.00 am - 11.00 pm</p>
-            <a href="mailto:deniascafe@gmail.com" class="body-4 sidebar-link"
-              >deniascafe@gmail.com</a
-            >
-            <div class="separator"></div>
-            <p class="contact-label">Booking Request</p>
-            <a
-              href="tel:+6281355906775"
-              class="body-1 contact-number hover-underline"
-            >
-            +62 813 5590 6775
-            </a>
-          </div>
-        </nav>
-        <a href="https://wa.me/+6281355906775" class="btn btn-secondary">
-          <span class="text text-1">Pesan Meja</span>
-          <span class="text text-2" aria-hidden="true">Pesan Meja</span>
-        </a>
-        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-          <span class="line line-3"></span>
-        </button>
-        <div class="overlay" data-nav-toggler data-overlay></div>
+
+      <!--Navbar di HP-->
+      <div class="text-center">
+        <p class="headline-1 navbar-title" th:text="#{navbar.visit_us_id}"></p>
+
+        <address class="body-4">
+          <span th:text="#{navbar.address_id}"></span> <br>
+        </address>
+
+        <p class="body-4 navbar-text" th:text="#{navbar.opening_hours_id}"></p>
+  <a href="mailto:deniascafe@gmail.com" class="body-4 sidebar-link" th:text="#{navbar.email_id}"></a>
+  <div class="separator"></div>
+  <p class="contact-label" th:text="#{navbar.booking_request_id}"></p>
+  <a href="tel:+6281355906775" class="body-1 contact-number hover-underline" th:text="#{navbar.phone_id}"></a>
       </div>
+
+    </nav>
+
+    <a href="https://wa.me/+6281355906775" class="btn btn-secondary">
+      <span class="text text-1" th:text="#{navbar.book_table_id}"></span>
+      <span class="text text-2" aria-hidden="true" th:text="#{navbar.book_table_id}"></span>
+    </a>
+
+    <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+    </button>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+
+  </div>
     </header>
 
     <!--CONTACT-->
@@ -223,6 +239,36 @@
     </symbol>
   </svg>
   <!-- END OF REVIEW -->
+  <!--RATA RATA-->
+  <section class="contact section bd-container" id="contact">
+    <div class="contact__container bd-grid">
+        <div id="dominant-emoji-container" class="centered">
+            <h1>Rata-Rata Kepuasan Pelanggan:</h1>
+            <div id="dominant-emoji" class="emoji"></div>
+        </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('/api/getDominantEmoji')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('dominant-emoji-container');
+                const emoji = data.dominantEmoji;
+                const emojiMap = {
+                    'angry': '😠',
+                    'sad': '😢',
+                    'ok': '😐',
+                    'good': '😊',
+                    'happy': '😄'
+                };
+                const emojiDisplay = emojiMap[emoji] || 'No reviews yet';
+  
+                container.innerHTML = `<h1>Rata-Rata Kepuasan Pelanggan: ${emojiDisplay}</h1>`;
+            })
+            .catch(error => console.error('Error:', error));
+    });
+  </script>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
@@ -268,7 +314,6 @@
     });
   });
 </script>
-
 
       <br>
   
@@ -365,50 +410,48 @@
       <div class="row">
         <div class="col">
           <img src="./assets/img/Logo.svg" class="footer_logo" />
-          <p class="footer_about">
-            Selamat datang di Denias Cafe, tempat menikmati kopi, jus, tea,
-            snack dan layanan ramah dalam suasana nyaman. Nikmati minuman dan
-            makanan kami yang disiapkan dengan penuh perhatian.
-          </p>
+          <p
+            class="footer_about"
+            th:text="#{footer.welcome_message_id}"
+          ></p>
         </div>
         <div class="col">
-          <h3>
-            Office
-            <div class="bottom_line"><span></span></div>
-          </h3>
-          <p>Jl. Sungguminahasa - Takalar</p>
-          <p>Tamallayang</p>
-          <p>Sulawesi Selatan, 92153, Indonesia</p>
-          <p class="footer_email">deniascafe@gmail.com</p>
-          <h4>+62 81355906775</h4>
+          <h3 th:text="#{footer.office_id}"></h3>
+          <p th:text="#{footer.address1_id}"></p>
+          <p th:text="#{footer.address2_id}"></p>
+          <p th:text="#{footer.address3_id}"></p>
+          <p class="footer_email" th:text="#{footer.email_id}"></p>
+          <h4 th:text="#{footer.phone_id}"></h4>
         </div>
         <div class="col">
-          <h3>
-            Links
-            <div class="bottom_line"><span></span></div>
-          </h3>
+          <h3 th:text="#{footer.links_id}"></h3>
           <ul>
-            <li><a href="/home">HOME</a></li>
-            <li><a href="/menu">MENU</a></li>
-            <li><a href="/aboutus">ABOUT US</a></li>
-            <li><a href="/pagereview">REVIEW</a></li>
-            <li><a href="contact">CONTACT</a></li>
+            <li><a href="/home" th:text="#{footer.home_id}"></a></li>
+            <li><a href="/menu" th:text="#{footer.menu_id}"></a></li>
+            <li>
+              <a href="/aboutus" th:text="#{footer.aboutus_id}"></a>
+            </li>
+            <li>
+              <a href="/pagereview" th:text="#{footer.review_id}"></a>
+            </li>
+            <li>
+              <a href="/contact" th:text="#{footer.contact_id}"></a>
+            </li>
           </ul>
         </div>
         <div class="col">
-          <h3>
-            Khusus Admin
-            <div class="bottom_line"><span></span></div>
-          </h3>
-          <a href="/awallogin">Admin Login</a> <br />
-
+          <h3 th:text="#{footer.admin_id}"></h3>
+          <button id="adminLoginButton">Admin Login</button>
           <div class="social_icons">
-            <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+            <ion-icon
+              class="social_icon"
+              name="logo-whatsapp"
+            ></ion-icon>
           </div>
         </div>
       </div>
       <hr />
-      <p class="copyright">Denias Cafe Ⓒ 2024 - All Rights Reserved</p>
+      <p class="copyright" th:text="#{footer.copyright_id}"></p>
     </footer>
 
     <!-- 
@@ -454,6 +497,75 @@
 
     <!--Swal notification-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--VERIFIKASI-->
+    <script>
+      document.getElementById('adminLoginButton').addEventListener('click', function() {
+          Swal.fire({
+              title: 'Apakah Anda Pegawai Disini?',
+              showDenyButton: true,
+              confirmButtonText: 'Iya',
+              denyButtonText: 'Tidak',
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  showVerificationModal();
+              } else if (result.isDenied) {
+                  window.location.href = '/home';
+              }
+          });
+      });
+
+      function showVerificationModal() {
+          Swal.fire({
+              title: 'Masukkan Kode Verifikasi',
+              input: 'password',
+              inputLabel: 'Kode Verifikasi',
+              showCancelButton: true,
+              confirmButtonText: 'Verifikasi',
+              preConfirm: (code) => {
+                  return fetch('/api/verify', {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/x-www-form-urlencoded',
+                      },
+                      body: new URLSearchParams({
+                          'code': code
+                      })
+                  })
+                  .then(response => response.text())
+                  .then(data => {
+                      if (data === 'Verifikasi berhasil!') {
+                          Swal.fire({
+                              title: 'Verifikasi berhasil!',
+                              text: 'Anda akan diarahkan ke laman login',
+                              icon: 'success',
+                              confirmButtonText: 'OK'
+                          }).then((result) => {
+                              if (result.isConfirmed) {
+                                  window.location.href = '/login';
+                              }
+                          });
+                      } else {
+                          Swal.fire({
+                              title: 'Kode verifikasi salah',
+                              text: 'Coba lagi.',
+                              icon: 'error',
+                              confirmButtonText: 'OK'
+                          });
+                      }
+                  })
+                  .catch(error => {
+                      Swal.fire({
+                          title: 'Terjadi kesalahan',
+                          text: 'Coba lagi.',
+                          icon: 'error',
+                          confirmButtonText: 'OK'
+                      });
+                  });
+              }
+          });
+      }
+  </script>
 
   </body>
 </html>

@@ -18,7 +18,7 @@ public class PendapatanPengeluaran {
     private long pengeluaran;
     private long total;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate tanggal;
 
     // Getter dan Setter

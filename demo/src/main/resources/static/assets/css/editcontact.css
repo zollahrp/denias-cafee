@@ -1,0 +1,88 @@
+/* f.css */
+
+/* Mengatur latar belakang dan tata letak dasar */
+body {
+    background-image: url('kopi1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Mengatur tampilan form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Mengatur tampilan form card */
+.form-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+/* Mengatur tampilan form title */
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #343a40;
+    text-align: center;
+}
+
+/* Mengatur tampilan form label */
+label {
+    font-weight: bold;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Mengatur tampilan form input */
+input[type="text"],
+input[type="email"],
+input[type="hidden"] {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Mengatur tampilan tombol simpan */
+button[type="submit"] {
+    background-color: #02a37e;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Mengatur tampilan tombol saat hover */
+button[type="submit"]:hover {
+    background-color: #00422d;
+}
+
+/* Mengatur tampilan responsive */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+    
+    .form-card {
+        width: 100%;
+        padding: 20px;
+    }
+}

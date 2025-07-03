@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Manager</title>
+    <link rel="stylesheet" th:href="@{/assets/css/login-manager.css}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1 class="title">Log In Manager</h1>
+            <p class="desc">Login akun Anda untuk mengelola web dan dashboard Denias Cafe</p>
+            <form action="/login-manager" method="post">
+                <div class="input-container">
+                    <input type="text" placeholder="Masukkan username Anda" name="username" autofocus>
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Masukkan password Anda" name="password">
+                </div>
+                <div class="account-controls">
+                    <button type="submit">Next <i class="fas fa-solid fa-angle-right"></i></button>
+                </div>
+            </form>
+            <span class="error-message"></span>
+            <span class="line"></span>
+        </div>
+        <div class="placeholder-banner">
+            <img th:src="@{/assets/img/login-bg.jpg}" alt="Login Bg" class="banner">
+        </div>
+    </div>
+</body>
+</html>
